@@ -115,6 +115,7 @@ return {
       'shfmt',
       'shellcheck',
       'stylua',
+      'tree-sitter-cli',
       'yamlfmt',
     })
 
