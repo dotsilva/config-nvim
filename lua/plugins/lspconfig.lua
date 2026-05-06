@@ -76,10 +76,8 @@ return {
       bashls = {},
       html = { filetypes = { 'html' } },
       jsonls = {},
-      yamlls = {},
       cssls = {},
       taplo = {},
-      biome = {},
       lua_ls = {
         on_init = function(client)
           if client.workspace_folders then
@@ -116,7 +114,6 @@ return {
       'shellcheck',
       'stylua',
       'tree-sitter-cli',
-      'yamlfmt',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
