@@ -26,7 +26,6 @@ return {
       'lua',
       'luadoc',
       'luap',
-      'make',
       'markdown',
       'markdown_inline',
       'nginx',
@@ -39,7 +38,6 @@ return {
       'toml',
       'vim',
       'vimdoc',
-      'xcompose',
     }
     require('nvim-treesitter').install(parsers)
     vim.api.nvim_create_autocmd('FileType', {
