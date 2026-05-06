@@ -74,9 +74,9 @@ return {
 
     local servers = {
       bashls = {},
+      cssls = {},
       html = { filetypes = { 'html' } },
       jsonls = {},
-      cssls = {},
       taplo = {},
       lua_ls = {
         on_init = function(client)
@@ -109,6 +109,7 @@ return {
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
+      'biome',
       'luacheck',
       'shfmt',
       'shellcheck',
