@@ -7,12 +7,8 @@ return {
     local parsers = {
       'awk',
       'bash',
-      'c',
       'css',
       'diff',
-      'disassembly',
-      'dockerfile',
-      'ecma',
       'editorconfig',
       'git_config',
       'git_rebase',
@@ -25,7 +21,6 @@ return {
       'http',
       'hyprlang',
       'ini',
-      'javascript',
       'jq',
       'json',
       'lua',
@@ -35,8 +30,6 @@ return {
       'markdown',
       'markdown_inline',
       'nginx',
-      'objdump',
-      'odin',
       'properties',
       'query',
       'readline',
@@ -47,7 +40,6 @@ return {
       'vim',
       'vimdoc',
       'xcompose',
-      'yaml',
     }
     require('nvim-treesitter').install(parsers)
     vim.api.nvim_create_autocmd('FileType', {
