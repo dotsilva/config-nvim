@@ -5,16 +5,15 @@ vim.o.background = 'dark'
 
 -- color palette
 local p = {
-  bg0 = '#1E1E1E',
-  bg1 = '#303030',
-  black = '#979797',
+  ground = '#1E1E1E',
+  black = '#858585',
   red = '#F34E4E',
   green = '#36DB36',
   yellow = '#CFCF2A',
   blue = '#7E7EFF',
   magenta = '#E742E7',
   cyan = '#38D5D5',
-  white = '#E0E0E0',
+  white = '#D4D4D4',
 }
 
 local function hi(group, opts) vim.api.nvim_set_hl(0, group, opts) end
@@ -43,58 +42,58 @@ vim.g.terminal_color_15 = p.white
 -- PHASE B: UI BACKGROUNDS & BORDERS
 -- ==========================================
 -- Base Text & Backgrounds
-hi('Normal', { fg = p.black, bg = p.bg0 })
-hi('NormalFloat', { fg = p.black, bg = p.bg0 })
-hi('NormalNC', { fg = p.black, bg = p.bg0 })
-hi('ColorColumn', { bg = p.bg1 })
-hi('CursorColumn', { bg = p.bg1 })
-hi('CursorLine', { bg = p.bg1 })
-hi('CursorLineNr', { fg = p.cyan, bg = p.bg1 })
-hi('LineNr', { fg = p.black, bg = p.bg1 })
-hi('SignColumn', { fg = p.black, bg = p.bg1 })
-hi('FoldColumn', { fg = p.black, bg = p.bg1 })
-hi('VertSplit', { fg = p.bg1, bg = p.bg0 })
-hi('WinSeparator', { fg = p.bg1, bg = p.bg0 })
-hi('EndOfBuffer', { fg = p.bg0, bg = p.bg0 })
-hi('Pmenu', { fg = p.black, bg = p.bg0 })
-hi('PmenuSel', { fg = p.bg1, bg = p.cyan, bold = true })
-hi('PmenuSbar', { bg = p.bg0 })
+hi('Normal', { fg = p.black, bg = p.ground })
+hi('NormalFloat', { fg = p.black, bg = p.ground })
+hi('NormalNC', { fg = p.black, bg = p.ground })
+hi('ColorColumn', { bg = p.ground })
+hi('CursorColumn', { bg = p.ground })
+hi('CursorLine', { bg = 'NONE', underdashed = true, sp = p.cyan })
+hi('CursorLineNr', { fg = p.cyan, bg = p.ground })
+hi('LineNr', { fg = p.black, bg = p.ground })
+hi('SignColumn', { fg = p.black, bg = p.ground })
+hi('FoldColumn', { fg = p.black, bg = p.ground })
+hi('VertSplit', { fg = p.ground, bg = p.ground })
+hi('WinSeparator', { fg = p.ground, bg = p.ground })
+hi('EndOfBuffer', { fg = p.ground, bg = p.ground })
+hi('Pmenu', { fg = p.black, bg = p.ground })
+hi('PmenuSel', { fg = p.ground, bg = p.cyan, bold = true })
+hi('PmenuSbar', { bg = p.ground })
 hi('PmenuThumb', { bg = p.black })
-hi('StatusLine', { fg = p.black, bg = p.bg1, bold = true })
-hi('StatusLineNC', { fg = p.black, bg = p.bg0 })
-hi('TabLine', { fg = p.black, bg = p.bg1 })
-hi('TabLineFill', { fg = p.black, bg = p.bg0 })
-hi('TabLineSel', { fg = p.black, bg = p.bg0, bold = true })
+hi('StatusLine', { fg = p.black, bg = p.ground, bold = true })
+hi('StatusLineNC', { fg = p.black, bg = p.ground })
+hi('TabLine', { fg = p.black, bg = p.ground })
+hi('TabLineFill', { fg = p.black, bg = p.ground })
+hi('TabLineSel', { fg = p.black, bg = p.ground, bold = true })
 hi('Title', { fg = p.black, bold = true })
-hi('Visual', { bg = p.cyan, fg = p.bg0 })
-hi('Search', { fg = p.bg0, bg = p.magenta })
-hi('IncSearch', { fg = p.bg0, bg = p.magenta })
-hi('MatchParen', { fg = p.bg0, bg = p.black, bold = true })
+hi('Visual', { bg = p.cyan, fg = p.ground })
+hi('Search', { fg = p.ground, bg = p.magenta })
+hi('IncSearch', { fg = p.ground, bg = p.magenta })
+hi('MatchParen', { fg = p.ground, bg = p.black, bold = true })
 hi('Directory', { fg = p.black, bold = true })
-hi('MsgArea', { fg = p.black, bg = p.bg0 })
+hi('MsgArea', { fg = p.black, bg = p.ground })
 
 -- Confirmations, Warnings, and Prompts
 hi('Question', { fg = p.yellow, bold = true })
 hi('WarningMsg', { fg = p.yellow, bold = true })
 hi('MoreMsg', { fg = p.yellow, bold = true })
-hi('ErrorMsg', { fg = p.red, bold = true, bg = p.bg1 })
+hi('ErrorMsg', { fg = p.red, bold = true, bg = p.ground })
 
 -- Strict Blue Borders
-hi('FloatBorder', { fg = p.blue, bg = p.bg0, bold = true })
-hi('FloatTitle', { fg = p.black, bg = p.bg0, bold = true })
+hi('FloatBorder', { fg = p.blue, bg = p.ground, bold = true })
+hi('FloatTitle', { fg = p.black, bg = p.ground, bold = true })
 
 -- ==========================================
 -- PHASE C: DIAGNOSTICS & VCS
 -- ==========================================
 -- Diagnostics Text
-hi('DiagnosticError', { fg = p.red, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticWarn', { fg = p.yellow, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticInfo', { fg = p.black, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticHint', { fg = p.black, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticVirtualTextError', { fg = p.red, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticVirtualTextWarn', { fg = p.yellow, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticVirtualTextInfo', { fg = p.black, bg = p.bg1, bold = true, italic = true })
-hi('DiagnosticVirtualTextHint', { fg = p.black, bg = p.bg1, bold = true, italic = true })
+hi('DiagnosticError', { fg = p.red, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticWarn', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticInfo', { fg = p.black, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticVirtualTextError', { fg = p.red, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticVirtualTextWarn', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticVirtualTextInfo', { fg = p.black, bg = p.ground, bold = true, italic = true })
+hi('DiagnosticVirtualTextHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
 
 -- Lsp References
 hi('LspReferenceText', { underline = true })
@@ -109,10 +108,10 @@ hi('DiagnosticUnderlineHint', { sp = p.black, undercurl = true })
 hi('DiagnosticUnnecessary', { sp = p.black, undercurl = true })
 
 -- Diff States
-hi('DiffAdd', { fg = p.green, bg = p.bg0, bold = true, italic = true })
-hi('DiffChange', { fg = p.yellow, bg = p.bg0, bold = true, italic = true })
-hi('DiffDelete', { fg = p.red, bg = p.bg0, bold = true, italic = true })
-hi('DiffText', { fg = p.bg0, bg = p.yellow, bold = true, italic = true })
+hi('DiffAdd', { fg = p.green, bg = p.ground, bold = true, italic = true })
+hi('DiffChange', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
+hi('DiffDelete', { fg = p.red, bg = p.ground, bold = true, italic = true })
+hi('DiffText', { fg = p.ground, bg = p.yellow, bold = true, italic = true })
 
 -- ==========================================
 -- PHASE D: TREESITTER
@@ -190,68 +189,68 @@ hi('Todo', { fg = p.cyan, bold = true })
 -- ==========================================
 -- PHASE F: PLUGINS
 -- ==========================================
-hi('DashboardSeparator', { fg = p.bg1 })
+hi('DashboardSeparator', { fg = p.ground })
 hi('DashboardVerse', { fg = p.black, bold = true })
 hi('DashboardTitle', { fg = p.blue, bold = true })
 hi('DashboardPath', { fg = p.cyan })
 
-hi('FidgetTitle', { fg = p.blue, bg = p.bg0, bold = true })
-hi('FidgetTask', { fg = p.black, bg = p.bg0 })
+hi('FidgetTitle', { fg = p.blue, bg = p.ground, bold = true })
+hi('FidgetTask', { fg = p.black, bg = p.ground })
 
 -- Mini Diff
-hi('MiniDiffSignAdd', { fg = p.green, bg = p.bg1 })
-hi('MiniDiffSignChange', { fg = p.yellow, bg = p.bg1 })
-hi('MiniDiffSignDelete', { fg = p.red, bg = p.bg1 })
+hi('MiniDiffSignAdd', { fg = p.green, bg = p.ground })
+hi('MiniDiffSignChange', { fg = p.yellow, bg = p.ground })
+hi('MiniDiffSignDelete', { fg = p.red, bg = p.ground })
 
 -- Oil File Explorer (Strict Blue Borders)
-hi('OilNormal', { fg = p.black, bg = p.bg0 })
+hi('OilNormal', { fg = p.black, bg = p.ground })
 hi('OilBorder', { fg = p.blue })
-hi('OilTitle', { fg = p.black, bg = p.bg0, bold = true })
+hi('OilTitle', { fg = p.black, bg = p.ground, bold = true })
 
 -- Mini Pick (Strict Blue Borders)
-hi('MiniPickNormal', { fg = p.black, bg = p.bg0 })
+hi('MiniPickNormal', { fg = p.black, bg = p.ground })
 hi('MiniPickBorder', { fg = p.blue })
-hi('MiniPickPrompt', { fg = p.black, bg = p.bg0 })
-hi('MiniPickMatchCurrent', { bg = p.bg1, sp = p.black })
+hi('MiniPickPrompt', { fg = p.black, bg = p.ground })
+hi('MiniPickMatchCurrent', { bg = p.ground, sp = p.black })
 hi('MiniPickMatchRanges', { fg = p.cyan, bold = true })
 
 -- Mini Statusline
-hi('MiniStatuslineModeNormal', { fg = p.bg0, bg = p.black, bold = true, italic = true })
-hi('MiniStatuslineModeInsert', { fg = p.bg0, bg = p.white, bold = true, italic = true })
-hi('MiniStatuslineModeVisual', { fg = p.bg0, bg = p.cyan, bold = true, italic = true })
-hi('MiniStatuslineModeCommand', { fg = p.bg0, bg = p.green, bold = true, italic = true })
-hi('MiniStatuslineModeReplace', { fg = p.bg0, bg = p.magenta, bold = true, italic = true })
-hi('MiniStatuslineModeOther', { fg = p.bg0, bg = p.black, bold = true, italic = true })
-hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.bg1 })
-hi('MiniStatuslineFilename', { fg = p.black, bg = p.bg1 })
+hi('MiniStatuslineModeNormal', { fg = p.ground, bg = p.black, bold = true, italic = true })
+hi('MiniStatuslineModeInsert', { fg = p.ground, bg = p.white, bold = true, italic = true })
+hi('MiniStatuslineModeVisual', { fg = p.ground, bg = p.cyan, bold = true, italic = true })
+hi('MiniStatuslineModeCommand', { fg = p.ground, bg = p.green, bold = true, italic = true })
+hi('MiniStatuslineModeReplace', { fg = p.ground, bg = p.magenta, bold = true, italic = true })
+hi('MiniStatuslineModeOther', { fg = p.ground, bg = p.black, bold = true, italic = true })
+hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
+hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
 
 -- Mini Clue (Strict Blue Borders)
-hi('MiniClueNormal', { fg = p.black, bg = p.bg0 })
-hi('MiniClueBorder', { fg = p.blue, bg = p.bg0 })
+hi('MiniClueNormal', { fg = p.black, bg = p.ground })
+hi('MiniClueBorder', { fg = p.blue, bg = p.ground })
 hi('MiniClueTitle', { fg = p.blue })
 hi('MiniClueNextKey', { fg = p.black })
 
 -- Mini Indentscope
 hi('MiniIndentscopeSymbol', { fg = p.black })
-hi('MiniIndentscopeSymbolOff', { fg = p.bg0 })
+hi('MiniIndentscopeSymbolOff', { fg = p.ground })
 
 -- Blink CMP (Strict Blue Borders)
-hi('BlinkCmpMenu', { fg = p.black, bg = p.bg0 })
-hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.bg0 })
-hi('BlinkCmpMenuSelection', { fg = p.black, bg = p.bg1 })
+hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
+hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.ground })
+hi('BlinkCmpMenuSelection', { fg = p.black, bg = p.ground })
 hi('BlinkCmpLabel', { fg = p.black })
 hi('BlinkCmpLabelMatch', { fg = p.magenta, bold = true })
 hi('BlinkCmpKind', { fg = p.cyan })
-hi('BlinkCmpDocBorder', { fg = p.blue, bg = p.bg0 })
-hi('BlinkCmpSignatureHelpBorder', { fg = p.blue, bg = p.bg0 })
+hi('BlinkCmpDocBorder', { fg = p.blue, bg = p.ground })
+hi('BlinkCmpSignatureHelpBorder', { fg = p.blue, bg = p.ground })
 
 -- Lazy & Mason
-hi('LazyNormal', { fg = p.black, bg = p.bg0 })
-hi('LazyButtonActive', { bg = p.bg1, fg = p.black, bold = true })
-hi('MasonNormal', { fg = p.black, bg = p.bg0 })
+hi('LazyNormal', { fg = p.black, bg = p.ground })
+hi('LazyButtonActive', { bg = p.ground, fg = p.black, bold = true })
+hi('MasonNormal', { fg = p.black, bg = p.ground })
 
 -- DAP & Neotest
-hi('DapBreakpoint', { fg = p.red, bg = p.bg1 })
-hi('DapStopped', { fg = p.yellow, bg = p.bg1 })
+hi('DapBreakpoint', { fg = p.red, bg = p.ground })
+hi('DapStopped', { fg = p.yellow, bg = p.ground })
 hi('NeotestPassed', { fg = p.green })
 hi('NeotestFailed', { fg = p.red })
