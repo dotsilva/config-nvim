@@ -7,6 +7,7 @@ return {
     local parsers = {
       'awk',
       'bash',
+      'c',
       'css',
       'diff',
       'editorconfig',
@@ -26,6 +27,7 @@ return {
       'lua',
       'luadoc',
       'luap',
+      'make',
       'markdown',
       'markdown_inline',
       'nginx',
