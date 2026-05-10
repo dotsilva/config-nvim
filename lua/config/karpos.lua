@@ -96,9 +96,9 @@ hi('DiagnosticVirtualTextInfo', { fg = p.black, bg = p.ground, bold = true, ital
 hi('DiagnosticVirtualTextHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
 
 -- Lsp References
-hi('LspReferenceText', { underline = true })
-hi('LspReferenceRead', { underline = true })
-hi('LspReferenceWrite', { underline = true })
+hi('LspReferenceText', { bold = true, undercurl = true, sp = p.magenta })
+hi('LspReferenceRead', { bold = true, undercurl = true, sp = p.magenta })
+hi('LspReferenceWrite', { bold = true, undercurl = true, sp = p.magenta })
 
 -- Diagnostics
 hi('DiagnosticUnderlineError', { sp = p.red, undercurl = true })
