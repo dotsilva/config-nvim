@@ -64,7 +64,7 @@ hi('StatusLineNC', { fg = p.black, bg = p.ground })
 hi('TabLine', { fg = p.black, bg = p.ground })
 hi('TabLineFill', { fg = p.black, bg = p.ground })
 hi('TabLineSel', { fg = p.black, bg = p.ground, bold = true })
-hi('Title', { fg = p.black, bold = true })
+hi('Title', { fg = p.blue, bold = true })
 hi('Visual', { bg = p.cyan, fg = p.ground })
 hi('Search', { fg = p.ground, bg = p.magenta })
 hi('IncSearch', { fg = p.ground, bg = p.magenta })
@@ -80,7 +80,7 @@ hi('ErrorMsg', { fg = p.red, bold = true, bg = p.ground })
 
 -- Strict Blue Borders
 hi('FloatBorder', { fg = p.blue, bg = p.ground, bold = true })
-hi('FloatTitle', { fg = p.black, bg = p.ground, bold = true })
+hi('FloatTitle', { fg = p.blue, bg = p.ground, bold = true })
 
 -- ==========================================
 -- PHASE C: DIAGNOSTICS & VCS
@@ -90,15 +90,21 @@ hi('DiagnosticError', { fg = p.red, bg = p.ground, bold = true, italic = true })
 hi('DiagnosticWarn', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
 hi('DiagnosticInfo', { fg = p.black, bg = p.ground, bold = true, italic = true })
 hi('DiagnosticHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
+
+hi('DiagnosticUnderlineError', { sp = p.red, undercurl = true, bold = true, italic = true })
+hi('DiagnosticUnderlineWarn', { sp = p.yellow, undercurl = true, bold = true, italic = true })
+hi('DiagnosticUnderlineInfo', { sp = p.magenta, undercurl = true, bold = true, italic = true })
+hi('DiagnosticUnderlineHint', { sp = p.magenta, undercurl = true, bold = true, italic = true })
+
 hi('DiagnosticVirtualTextError', { fg = p.red, bg = p.ground, bold = true, italic = true })
 hi('DiagnosticVirtualTextWarn', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
 hi('DiagnosticVirtualTextInfo', { fg = p.black, bg = p.ground, bold = true, italic = true })
 hi('DiagnosticVirtualTextHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
 
 -- Lsp References
-hi('LspReferenceText', { bold = true, undercurl = true, sp = p.magenta })
-hi('LspReferenceRead', { bold = true, undercurl = true, sp = p.magenta })
-hi('LspReferenceWrite', { bold = true, undercurl = true, sp = p.magenta })
+hi('LspReferenceText', { bold = true, underdouble = true, sp = p.magenta })
+hi('LspReferenceRead', { bold = true, underdouble = true, sp = p.magenta })
+hi('LspReferenceWrite', { bold = true, underdashed = true, sp = p.magenta })
 
 -- Diagnostics
 hi('DiagnosticUnderlineError', { sp = p.red, undercurl = true })
@@ -189,7 +195,7 @@ hi('Todo', { fg = p.cyan, bold = true })
 -- ==========================================
 -- PHASE F: PLUGINS
 -- ==========================================
-hi('DashboardSeparator', { fg = p.ground })
+hi('DashboardSeparator', { fg = p.black })
 hi('DashboardVerse', { fg = p.black, bold = true })
 hi('DashboardTitle', { fg = p.blue, bold = true })
 hi('DashboardPath', { fg = p.cyan })
@@ -198,20 +204,20 @@ hi('FidgetTitle', { fg = p.blue, bg = p.ground, bold = true })
 hi('FidgetTask', { fg = p.black, bg = p.ground })
 
 -- Mini Diff
-hi('MiniDiffSignAdd', { fg = p.green, bg = p.ground })
-hi('MiniDiffSignChange', { fg = p.yellow, bg = p.ground })
-hi('MiniDiffSignDelete', { fg = p.red, bg = p.ground })
+hi('MiniDiffSignAdd', { fg = p.green, bg = p.ground, bold = true })
+hi('MiniDiffSignChange', { fg = p.yellow, bg = p.ground, bold = true })
+hi('MiniDiffSignDelete', { fg = p.red, bg = p.ground, bold = true })
 
 -- Oil File Explorer (Strict Blue Borders)
 hi('OilNormal', { fg = p.black, bg = p.ground })
 hi('OilBorder', { fg = p.blue })
-hi('OilTitle', { fg = p.black, bg = p.ground, bold = true })
+hi('OilTitle', { fg = p.blue, bg = p.ground, bold = true })
 
 -- Mini Pick (Strict Blue Borders)
 hi('MiniPickNormal', { fg = p.black, bg = p.ground })
 hi('MiniPickBorder', { fg = p.blue })
 hi('MiniPickPrompt', { fg = p.black, bg = p.ground })
-hi('MiniPickMatchCurrent', { bg = p.ground, sp = p.black })
+hi('MiniPickMatchCurrent', { bg = 'NONE', underdotted = true, sp = p.cyan })
 hi('MiniPickMatchRanges', { fg = p.cyan, bold = true })
 
 -- Mini Statusline
@@ -223,11 +229,12 @@ hi('MiniStatuslineModeReplace', { fg = p.ground, bg = p.magenta, bold = true, it
 hi('MiniStatuslineModeOther', { fg = p.ground, bg = p.black, bold = true, italic = true })
 hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
+hi('MiniStatuslineLsp', { fg = p.magenta, bg = p.ground, bold = true })
 
 -- Mini Clue (Strict Blue Borders)
 hi('MiniClueNormal', { fg = p.black, bg = p.ground })
 hi('MiniClueBorder', { fg = p.blue, bg = p.ground })
-hi('MiniClueTitle', { fg = p.blue })
+hi('MiniClueTitle', { fg = p.blue, bold = true })
 hi('MiniClueNextKey', { fg = p.black })
 
 -- Mini Indentscope
@@ -237,20 +244,56 @@ hi('MiniIndentscopeSymbolOff', { fg = p.ground })
 -- Blink CMP (Strict Blue Borders)
 hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
 hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.ground })
-hi('BlinkCmpMenuSelection', { fg = p.black, bg = p.ground })
+hi('BlinkCmpMenuSelection', { bg = 'NONE', bold = true, underdotted = true, sp = p.cyan })
 hi('BlinkCmpLabel', { fg = p.black })
 hi('BlinkCmpLabelMatch', { fg = p.magenta, bold = true })
-hi('BlinkCmpKind', { fg = p.cyan })
+hi('BlinkCmpKind', { fg = p.black })
 hi('BlinkCmpDocBorder', { fg = p.blue, bg = p.ground })
 hi('BlinkCmpSignatureHelpBorder', { fg = p.blue, bg = p.ground })
 
--- Lazy & Mason
+-- ==========================================
+-- Lazy.nvim
+-- ==========================================
 hi('LazyNormal', { fg = p.black, bg = p.ground })
-hi('LazyButtonActive', { bg = p.ground, fg = p.black, bold = true })
-hi('MasonNormal', { fg = p.black, bg = p.ground })
+hi('LazyH1', { fg = p.blue, bold = true })
+hi('LazyH2', { fg = p.blue, bold = true })
+hi('LazyButton', { fg = p.black, bg = p.ground })
+hi('LazyButtonActive', { fg = p.cyan, bg = 'NONE', bold = true, underdotted = true, sp = p.cyan })
+hi('LazyDir', { fg = p.cyan })
+hi('LazyUrl', { fg = p.cyan })
+hi('LazyCommit', { fg = p.cyan })
+hi('LazyProgressDone', { fg = p.green })
+hi('LazyProgressTodo', { fg = p.black })
+hi('LazyTaskError', { fg = p.red, bold = true })
+hi('LazyTaskOutput', { fg = p.white })
+hi('LazyDimmed', { fg = p.black, italic = true })
+hi('LazyProp', { fg = p.cyan })
+hi('LazyValue', { fg = p.white })
+hi('LazySpecial', { fg = p.magenta })
+hi('LazyReasonCmd', { fg = p.green })
+hi('LazyReasonEvent', { fg = p.yellow })
+hi('LazyReasonFt', { fg = p.blue })
+hi('LazyReasonKeys', { fg = p.white })
+hi('LazyReasonPlugin', { fg = p.blue })
+hi('LazyReasonSource', { fg = p.cyan })
+hi('LazyReasonStart', { fg = p.green })
 
--- DAP & Neotest
-hi('DapBreakpoint', { fg = p.red, bg = p.ground })
-hi('DapStopped', { fg = p.yellow, bg = p.ground })
-hi('NeotestPassed', { fg = p.green })
-hi('NeotestFailed', { fg = p.red })
+-- ==========================================
+-- Mason.nvim
+-- ==========================================
+hi('MasonNormal', { fg = p.black, bg = p.ground })
+hi('MasonHeader', { fg = p.blue, bold = true }) -- Blue titles
+hi('MasonHeaderSecondary', { fg = p.blue, bold = true })
+hi('MasonHeading', { fg = p.blue, bold = true })
+hi('MasonHighlight', { fg = p.cyan }) -- Focus
+hi('MasonHighlightBlock', { fg = p.ground, bg = p.cyan })
+hi('MasonHighlightBlockBold', { fg = p.ground, bg = p.cyan, bold = true })
+hi('MasonHighlightSecondary', { fg = p.yellow })
+hi('MasonHighlightBlockSecondary', { fg = p.ground, bg = p.yellow })
+hi('MasonHighlightBlockBoldSecondary', { fg = p.ground, bg = p.yellow, bold = true })
+hi('MasonLink', { fg = p.cyan }) -- Reference link
+hi('MasonMuted', { fg = p.black, italic = true })
+hi('MasonMutedBlock', { fg = p.black, bg = p.ground })
+hi('MasonMutedBlockBold', { fg = p.black, bg = p.ground, bold = true })
+hi('MasonError', { fg = p.red, bold = true }) -- Stop
+hi('MasonWarning', { fg = p.yellow, bold = true }) -- Route/Warn
