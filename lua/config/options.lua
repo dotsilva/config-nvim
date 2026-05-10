@@ -30,10 +30,10 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- Indentation: 2 spaces, no tabs. The truth.
-vim.opt.tabstop = 2 -- Number of spaces a <Tab> counts for
-vim.opt.shiftwidth = 2 -- Size of an indent operation (>> or <<)
+vim.opt.tabstop = 4 -- Number of spaces a <Tab> counts for
+vim.opt.shiftwidth = 4 -- Size of an indent operation (>> or <<)
 vim.opt.expandtab = true -- Convert tabs to spaces automatically
-vim.opt.softtabstop = 2 -- Treat 2 spaces as a tab when deleting/backspacing
+vim.opt.softtabstop = 4 -- Treat 2 spaces as a tab when deleting/backspacing
 
 -- Diagnostic Config
 vim.diagnostic.config {
