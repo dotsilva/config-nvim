@@ -1,5 +1,7 @@
 
-# karpos.nvim: a logical and simple nvim theme using terminal colors
+# YET IN PRE-ALPHA
+
+## karpos.nvim: a logical and simple nvim theme using terminal colors
 
 **"Therefore by their fruits ye shall know them" - Matthew 7:15 ASV**
 
