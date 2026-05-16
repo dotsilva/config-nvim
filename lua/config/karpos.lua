@@ -47,8 +47,8 @@ hi('NormalFloat', { fg = p.black, bg = p.ground })
 hi('NormalNC', { fg = p.black, bg = p.ground })
 hi('ColorColumn', { bg = p.ground })
 hi('CursorColumn', { bg = p.ground })
-hi('CursorLine', { bg = 'NONE', bold = true, underdotted = true, sp = p.cyan })
-hi('CursorLineNr', { fg = p.cyan, bg = p.ground, bold = true, italic = true, underdotted = true, sp = p.cyan })
+hi('CursorLine', { bg = 'NONE', bold = true, underdotted = true, sp = p.magenta })
+hi('CursorLineNr', { fg = p.magenta, bg = p.ground, bold = true, italic = true, underdotted = true, sp = p.magenta })
 hi('LineNr', { fg = p.black, bg = p.ground, italic = true })
 hi('SignColumn', { fg = p.black, bg = p.ground })
 hi('FoldColumn', { fg = p.black, bg = p.ground })
@@ -125,7 +125,6 @@ hi('DiffText', { fg = p.ground, bg = p.yellow, bold = true, italic = true })
 -- green - working
 hi('@function.call', { fg = p.green })
 hi('@method.call', { fg = p.green })
-hi('@operator', { fg = p.green })
 
 -- cyan referencing
 hi('@variable', { fg = p.cyan })
@@ -140,29 +139,28 @@ hi('@method', { fg = p.blue })
 hi('@type', { fg = p.blue })
 hi('@type.builtin', { fg = p.blue })
 hi('@keyword.function', { fg = p.blue })
-hi('@keyword.return', { fg = p.red })
-hi('@punctuation.bracket', { fg = p.blue })
-hi('@punctuation.delimiter', { fg = p.blue })
 
 -- yellow - routing
 hi('@keyword.conditional', { fg = p.yellow })
 hi('@keyword.repeat', { fg = p.yellow })
 hi('@keyword.exception', { fg = p.yellow })
+hi('@keyword.directive', { fg = p.yellow })
+hi('@keyword.return', { fg = p.yellow })
 
 -- magenta - signaling
 hi('@boolean', { fg = p.magenta })
 hi('@constant.builtin', { fg = p.magenta })
 hi('@character.special', { fg = p.magenta })
 hi('@string.escape', { fg = p.magenta })
+hi('@operator', { fg = p.magenta })
+hi('@punctuation.bracket', { fg = p.magenta })
+hi('@punctuation.delimiter', { fg = p.magenta })
 
 -- white - saying
 hi('@string', { fg = p.white })
 hi('@number', { fg = p.white })
 hi('@float', { fg = p.white })
 hi('@character', { fg = p.white })
-
--- red - stopping
-hi('@keyword.directive', { fg = p.red })
 
 -- black - commenting
 hi('@comment', { fg = p.black, italic = true })
@@ -291,7 +289,7 @@ hi('MasonHighlightBlockBold', { fg = p.ground, bg = p.cyan, bold = true })
 hi('MasonHighlightSecondary', { fg = p.yellow })
 hi('MasonHighlightBlockSecondary', { fg = p.ground, bg = p.yellow })
 hi('MasonHighlightBlockBoldSecondary', { fg = p.ground, bg = p.yellow, bold = true })
-hi('MasonLink', { fg = p.cyan }) -- Reference link
+hi('MasonLink', { fg = p.cyan })
 hi('MasonMuted', { fg = p.black, italic = true })
 hi('MasonMutedBlock', { fg = p.black, bg = p.ground })
 hi('MasonMutedBlockBold', { fg = p.black, bg = p.ground, bold = true })
