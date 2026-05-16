@@ -17,12 +17,12 @@
 
 ## syntax highlight
 
-* black (naping): take it out and the file still works (comments, etc).
+* black (whispering): take it out and the file still works (comments, etc).
 * red (ALARMING): not used in syntax to preserve the power of the meaning.
 * green (working): mutate state, write (function/method calls, etc).
-* yellow (guiding): does flow control (like `if`, `for`, `break`, `await`, etc).
-* blue (assigning): define abstractions (function/method/variable definitions, type/class assignments, etc).
-* magenta (emoting): data signaling exceptional states and symbols (escape character, boolean, `nil`, not-a-letter-not-a-number, etc).
+* yellow (controling): does flow control (like `if`, `for`, `break`, `await`, etc).
+* blue (defining): sets boundaries and abstractions (function/method/variable definitions, type/class assignments, structural punctuation, etc).
+* magenta (signaling): data signaling exceptional states and symbols (escape character, boolean, `nil`, not-a-letter-not-a-number, etc).
 * cyan (linking): passively act as placeholders (calling variable, links, file paths, etc).
 * white (saying): literal data (strings, literal numbers, etc).
 
