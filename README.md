@@ -1,14 +1,39 @@
 
-# karpos.nvim
+# karpos.nvim: a logical and simple nvim theme using terminal colors
 
-* This is the specification for the syntax highlight in karpos.nvim neovim theme, using an operational approach it assigns colors to elements based on what they do instead of their grammatical identity.
+**"Therefore by their fruits ye shall know them" - Matthew 7:15 ASV**
 
-## The Axioms of Operational Syntax
-* *Green (To Work):* Elements that mutate, execute processes or write to disk (function/method calls, mutations, triggers, commands, etc).
-* *Cyan (To Reference):* Elements that passively link to memory or act as inert pointers to data like placeholders (e.g. calling a variable, calling json key through jq, links, file paths, etc).
-* *Blue (To Define):* Elements that build structural scaffolding, establish boundaries, define abstractions (structural punctuation, class/variable declarations, type definitions, function/method/variable definitions, etc).
-* *Yellow (To Route):* Elements that actively dictate flow, fork or loop the path of execution through that defined architecture (``if``, ``else``, ``switch``, loops, quantifiers, etc).
-* *Magenta (To Signal):* Special data that alert the compiler/interpreter to exceptional states (escape characters, boolean values, `null`, etc).
-* *White (To Say):* Arbitrary literal normal data (standard numbers, literal text strings, etc).
-* *Red (To Stop):* Commands that stop or pause code execution, either of the whole program or just some code block/line within it (``break``, ``await``, etc).
-* *Black (To Comment):* Elements that are moot, structurally ignored by the compiler/interpreter, and exist only as passive human notes, even stuff like luadoc (comments, docstrings, etc).
+* ground: `#1E1E1E`
+* black:  `#858585`
+* red:    `#FF4949`
+* green:  `#36DB36`
+* yellow: `#CFCF2A`
+* blue:   `#7E7EFF`
+* magenta:`#E742E7`
+* cyan:   `#38D5D5`
+* white:  `#D4D4D4`
+
+## syntax highlight
+
+* black (naping): take it out and the file still works (comments, etc).
+* red (ALARMING): not used in syntax to preserve the power of the meaning.
+* green (working): mutate state, write (function/method calls, etc).
+* yellow (guiding): does flow control (like `if`, `for`, `break`, `await`, etc).
+* blue (assigning): define abstractions (function/method/variable definitions, type/class assignments, etc).
+* magenta (emoting): data signaling exceptional states and symbols (escape character, boolean, `nil`, not-a-letter-not-a-number, etc).
+* cyan (linking): passively act as placeholders (calling variable, links, file paths, etc).
+* white (saying): literal data (strings, literal numbers, etc).
+
+## neovim ui
+
+0. ground: background.
+1. red: critical.
+3. green: positive.
+4. magenta: you-are-here.
+5. black: whatever.
+
+## what this achieve
+
+1. no rainbow salad: monochrome is bad, panchrome is also bad, karpos.nvim stick to 8 ansi slots and a background.
+2. you can just swap it for your own 8 terminal colors.
+3. the semantic power of red is preserved by not puting it into syntax highlight
