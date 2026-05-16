@@ -125,6 +125,7 @@ hi('DiffText', { fg = p.ground, bg = p.yellow, bold = true, italic = true })
 -- green - working
 hi('@function.call', { fg = p.green })
 hi('@method.call', { fg = p.green })
+hi('@operator', { fg = p.green })
 
 -- cyan referencing
 hi('@variable', { fg = p.cyan })
@@ -139,6 +140,8 @@ hi('@method', { fg = p.blue })
 hi('@type', { fg = p.blue })
 hi('@type.builtin', { fg = p.blue })
 hi('@keyword.function', { fg = p.blue })
+hi('@punctuation.bracket', { fg = p.blue })
+hi('@punctuation.delimiter', { fg = p.blue })
 
 -- yellow - routing
 hi('@keyword.conditional', { fg = p.yellow })
@@ -152,9 +155,6 @@ hi('@boolean', { fg = p.magenta })
 hi('@constant.builtin', { fg = p.magenta })
 hi('@character.special', { fg = p.magenta })
 hi('@string.escape', { fg = p.magenta })
-hi('@operator', { fg = p.magenta })
-hi('@punctuation.bracket', { fg = p.magenta })
-hi('@punctuation.delimiter', { fg = p.magenta })
 
 -- white - saying
 hi('@string', { fg = p.white })
