@@ -1,5 +1,5 @@
 
-# YET IN PRE-ALPHA
+# my nvim config
 
 ## karpos.nvim: a logical and simple nvim theme using terminal colors
 
