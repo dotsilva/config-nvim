@@ -1,9 +1,5 @@
 
-# my nvim config
-
-## karpos.nvim: a logical and simple nvim theme using terminal colors
-
-**"Therefore by their fruits ye shall know them" - Matthew 7:15 ASV**
+# xterm.nvim: a logical and simple nvim theme using terminal colors
 
 * ground: `#1E1E1E`
 * black:  `#858585`
@@ -17,25 +13,26 @@
 
 ## syntax highlight
 
-* black (whispering): take it out and the file still works (comments, etc).
-* red (ALARMING): not used in syntax to preserve the power of the meaning.
-* green (working): mutate state, write (function/method calls, etc).
-* yellow (controling): does flow control (like `if`, `for`, `break`, `await`, etc).
-* blue (defining): sets boundaries and abstractions (function/method/variable definitions, type/class assignments, structural punctuation, etc).
-* magenta (signaling): data signaling exceptional states and symbols (escape character, boolean, `nil`, not-a-letter-not-a-number, etc).
-* cyan (linking): passively act as placeholders (calling variable, links, file paths, etc).
-* white (saying): literal data (strings, literal numbers, etc).
+* black: comments; take it out and the file still works.
+* red: important; not used in syntax to preserve its power.
+* green: execution; function/method calls.
+* yellow: flow-control; conditionals and stops, e.g. `if`, `for`, `break`, `await`.
+* blue: definition; set boundaries and abstractions, e.g. function/variable definitions, type assignments, structural punctuation.
+* magenta: catch-all; if does not fall in other color it falls here.
+* cyan: reference; passive placeholders, e.g. links, file paths, calling variables.
+* white: strings, chars.
 
 ## neovim ui
 
 0. ground: background.
-1. red: critical.
-3. green: positive.
-4. magenta: you-are-here.
-5. black: whatever.
+1. red: important.
+2. green: positive.
+3. magenta: you-are-here.
+4. black: whatever.
 
 ## what this achieve
 
-1. no rainbow salad: monochrome is bad, panchrome is also bad, karpos.nvim stick to 8 ansi slots and a background.
-2. you can just swap it for your own 8 terminal colors.
-3. the semantic power of red is preserved by not puting it into syntax highlight
+0. no rainbow salad: monochrome is bad, panchrome is also bad, karpos.nvim stick to 8 ansi slots and a background.
+1. colors have simple meanings.
+2. the semantic power of red is preserved by not puting it into syntax highlight.
+3. you can just swap it for your own 8 terminal colors and background.
