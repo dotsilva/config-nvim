@@ -1,6 +1,6 @@
 vim.cmd 'hi clear'
 if vim.fn.exists 'syntax_on' then vim.cmd 'syntax reset' end
-vim.g.colors_name = 'karpos'
+vim.g.colors_name = 'xterm'
 vim.o.background = 'dark'
 
 -- color palette
@@ -151,15 +151,15 @@ hi('@keyword.directive', { fg = p.yellow })
 hi('@keyword.return', { fg = p.yellow })
 
 -- magenta - signaling
-hi('@boolean', { fg = p.magenta })
 hi('@constant.builtin', { fg = p.magenta })
 hi('@character.special', { fg = p.magenta })
 hi('@string.escape', { fg = p.magenta })
+hi('@boolean', { fg = p.magenta })
+hi('@number', { fg = p.magenta })
+hi('@float', { fg = p.magenta })
 
 -- white - saying
 hi('@string', { fg = p.white })
-hi('@number', { fg = p.white })
-hi('@float', { fg = p.white })
 hi('@character', { fg = p.white })
 
 -- black - commenting
@@ -172,7 +172,7 @@ hi('@spell', { fg = p.black, italic = true })
 -- ==========================================
 hi('Comment', { fg = p.black, italic = true })
 hi('String', { fg = p.white })
-hi('Number', { fg = p.white })
+hi('Number', { fg = p.magenta })
 hi('Boolean', { fg = p.magenta })
 hi('Constant', { fg = p.magenta })
 hi('Identifier', { fg = p.cyan })

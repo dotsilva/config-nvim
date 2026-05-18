@@ -32,7 +32,7 @@
 
 ## what this achieve
 
-- no rainbow salad: monochrome is bad, panchrome is also bad, karpos.nvim stick to 8 ansi slots and a background.
+- no rainbow salad: monochrome is bad, panchrome is also bad, xterm.nvim stick to 8 ansi slots and a background.
 - colors have simple meanings.
 - the semantic power of red is preserved by not puting it into syntax highlight.
 - you can just swap it for your own 8 terminal colors and background.
