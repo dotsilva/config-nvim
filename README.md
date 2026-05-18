@@ -14,7 +14,7 @@
 ## syntax highlight
 
 - black: comments; take it out and the file still works.
-- red: important; not used in syntax to preserve its power.
+- red: negative; not used in syntax to preserve its power.
 - green: execution; function/method calls.
 - yellow: flow-control; conditionals and stops, e.g. `if`, `for`, `break`, `await`.
 - blue: definition; set boundaries and abstractions, e.g. function/variable definitions, type assignments, structural punctuation.
@@ -25,7 +25,7 @@
 ## neovim ui
 
 - ground: background.
-- red: important.
+- red: negative.
 - green: positive.
 - magenta: you-are-here.
 - black: whatever.
