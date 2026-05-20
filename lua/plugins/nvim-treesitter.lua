@@ -5,43 +5,43 @@ return {
   branch = 'main',
   config = function()
     local parsers = {
-      'awk', -- w
-      'bash', -- w
-      'c', -- w
-      'css', -- w
+      'awk',
+      'bash',
+      'c',
+      'css',
       'diff',
-      'editorconfig', -- w
-      'git_config', -- w
-      'git_rebase', -- w
-      'gitcommit', -- w
-      'gitignore', -- w
-      'gpg', -- w
-      'glsl', -- w
-      'html', -- w
+      'editorconfig',
+      'git_config',
+      'git_rebase',
+      'gitcommit',
+      'gitignore',
+      'gpg',
+      'glsl',
+      'html',
       'html_tags',
-      'http', -- w
-      'hyprlang', -- w
+      'http',
+      'hyprlang',
       'ini',
-      'jq', -- w
-      'json', -- w
-      'lua', -- w
-      'luadoc', -- w
-      'luap', -- w
-      'markdown', -- w
-      'markdown_inline', -- w
-      'nginx', -- w
+      'jq',
+      'json',
+      'lua',
+      'luadoc',
+      'luap',
+      'markdown',
+      'markdown_inline',
+      'nginx',
       'properties',
-      'qmljs', -- w
+      'qmljs',
       'query',
-      'readline', -- w
-      'regex', -- w
-      'sql', -- w
-      'ssh_config', -- w
-      'toml', -- w
-      'vim', -- w
-      'vimdoc', -- w
+      'readline',
+      'regex',
+      'sql',
+      'ssh_config',
+      'toml',
+      'vim',
+      'vimdoc',
       'xcompose',
-      'zig', -- w
+      'zig',
     }
 
     require('nvim-treesitter').install(parsers)
