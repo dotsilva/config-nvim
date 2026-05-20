@@ -27,8 +27,6 @@ return {
       'lua',
       'luadoc',
       'luap',
-      'make',
-      'cmake',
       'markdown',
       'markdown_inline',
       'nginx',
