@@ -13,7 +13,7 @@ require 'config.keymaps'
 require 'config.autocmds'
 require 'config.dashboard'
 require 'config.health'
-require 'config.xterm9'
+require 'config.base9'
 
 -- 3. Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

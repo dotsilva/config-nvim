@@ -1,6 +1,6 @@
 vim.cmd 'hi clear'
 if vim.fn.exists 'syntax_on' then vim.cmd 'syntax reset' end
-vim.g.colors_name = 'xterm9'
+vim.g.colors_name = 'base9'
 vim.o.background = 'dark'
 
 -- color palette
@@ -42,7 +42,7 @@ vim.g.terminal_color_15 = p.white
 -- PHASE B: UI BACKGROUNDS & BORDERS
 -- ==========================================
 -- Base Text & Backgrounds
-hi('Normal', { fg = p.black, bg = p.ground })
+hi('Normal', { fg = p.white, bg = p.ground })
 hi('NormalFloat', { fg = p.black, bg = p.ground })
 hi('NormalNC', { fg = p.black, bg = p.ground })
 hi('ColorColumn', { bg = p.ground })

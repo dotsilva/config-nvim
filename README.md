@@ -1,5 +1,5 @@
 
-# xterm9.nvim: a logical and simple nvim theme using terminal colors
+# base9.nvim: a logical and simple nvim theme using terminal colors
 
 - ground: `#1E1E1E`
 - black:  `#858585`
@@ -32,7 +32,7 @@
 
 ## what this achieve
 
-- no rainbow salad: monochrome is bad, panchrome is also bad, xterm9.nvim stick to 8 ansi slots and a background.
+- no rainbow salad: monochrome is bad, panchrome is also bad, base9.nvim stick to 8 ansi slots and a background.
 - colors have simple meanings.
 - the semantic power of red is preserved by not puting it into syntax highlight.
 - you can just swap it for your own 8 terminal colors and background.
