@@ -8,6 +8,7 @@ return {
       'awk',
       'bash',
       'c',
+      'cmake',
       'css',
       'diff',
       'editorconfig',
@@ -27,9 +28,11 @@ return {
       'lua',
       'luadoc',
       'luap',
+      'make',
       'markdown',
       'markdown_inline',
       'nginx',
+      'odin',
       'properties',
       'qmljs',
       'query',
@@ -41,7 +44,6 @@ return {
       'vim',
       'vimdoc',
       'xcompose',
-      'zig',
     }
 
     require('nvim-treesitter').install(parsers)
