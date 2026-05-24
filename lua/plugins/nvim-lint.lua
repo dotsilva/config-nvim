@@ -4,20 +4,18 @@ return {
   config = function()
     local lint = require 'lint'
     lint.linters_by_ft = {
-      sh = { 'shellcheck' },
+      c = { 'clangd' },
+      css = { 'biome' },
+            dosini = {'taplo'},
+      html = { 'biome' },
+      json = { 'biome' },
+      jsonc = { 'biome' },
       lua = { 'luacheck' },
-    }
-
-    -- Intercept luacheck and inject the global 'vim' rule directly into its CLI arguments
-    local luacheck = require('lint').linters.luacheck
-    luacheck.args = {
-      '--formatter',
-      'plain',
-      '--codes',
-      '--ranges',
-      '--globals',
-      'vim',
-      '-',
+      odin = { 'ols' },
+      qml = { 'qmlls' },
+      sh = { 'shellcheck' },
+      sql = { 'sqlfluff' },
+      toml = { 'taplo' },
     }
 
     -- ========================

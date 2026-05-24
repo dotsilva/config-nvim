@@ -12,24 +12,24 @@ return {
   },
   opts = {
     notify_on_error = false,
-    format_on_save = function(bufnr)
-      local disable_filetypes = { c = true, cpp = true }
-      if disable_filetypes[vim.bo[bufnr].filetype] then
-        return nil
-      else
-        return {
+    format_on_save = {
           timeout_ms = 500,
           lsp_format = 'fallback',
-        }
-      end
-    end,
-    formatters_by_ft = {
-      lua = { 'stylua' },
-      sh = { 'shfmt' },
-      json = { 'biome' },
-      jsonc = { 'biome' },
-      css = { 'biome' },
-      toml = { 'taplo' },
     },
+formatters_by_ft = {
+  c = { 'clangd' },
+  css = { 'biome' },
+            dosini = {'taplo'},
+            html = {'biome'},
+  json = { 'biome' },
+  jsonc = { 'biome' },
+  lua = { 'stylua' },
+            markdown = {'mdformat'},
+  odin = { 'ols' },
+  qml = { 'qmlls' },
+  sh = { 'shfmt' },
+            sql = {'sqlfluff'},
+  toml = { 'taplo' },
+},
   },
 }
