@@ -18,7 +18,7 @@ return {
         'qmlls', -- qml
         'shfmt', -- bash
         'shellcheck', -- bash
-        'sql_formatter', -- sql
+        'sql-formatter', -- sql
         'stylua', -- lua
         'taplo', -- toml, ini
         'tree-sitter-cli', -- required by nvim-treesitter
