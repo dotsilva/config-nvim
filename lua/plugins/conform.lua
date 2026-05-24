@@ -17,19 +17,19 @@ return {
       lsp_format = 'fallback',
     },
     formatters_by_ft = {
-      -- c = { 'clangd' },
+      c = { 'clang-format' }, -- working -- alt clangd
       css = { 'biome' }, -- working
       dosini = { 'taplo' }, -- working
-      -- html = { 'biome' }, -- need-to-enable-manually? maybe not, remind dosini
+      html = { 'htmlbeautifier' }, -- working -- alt biome
       javascript = { 'biome' }, -- working
       json = { 'biome' }, -- working
       jsonc = { 'biome' }, -- working
       lua = { 'stylua' }, -- working
       markdown = { 'mdformat' }, -- working
       -- odin = { 'ols' },
-      qml = { 'qmlls' },
+      -- qml = { 'qmlls' },
       sh = { 'shfmt' }, -- working
-      sql = { 'sql_formatter' }, -- working --ver sqlfluff and sqruff
+      sql = { 'sql_formatter' }, -- working -- alt sqruff
       toml = { 'taplo' }, -- working
     },
   },
