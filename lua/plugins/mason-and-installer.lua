@@ -2,7 +2,7 @@ return {
 {
 'mason-org/mason.nvim',
 opts = { ui = { border = 'double' } },
-}
+},
 {
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   config = function()
@@ -23,5 +23,5 @@ opts = { ui = { border = 'double' } },
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
   end,
-}
+},
 }

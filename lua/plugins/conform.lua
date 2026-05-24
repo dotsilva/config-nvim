@@ -13,23 +13,24 @@ return {
   opts = {
     notify_on_error = false,
     format_on_save = {
-          timeout_ms = 500,
-          lsp_format = 'fallback',
+      timeout_ms = 500,
+      lsp_format = 'fallback',
     },
-formatters_by_ft = {
-  c = { 'clangd' },
-  css = { 'biome' },
-            dosini = {'taplo'},
-            html = {'biome'},
-  json = { 'biome' },
-  jsonc = { 'biome' },
-  lua = { 'stylua' },
-            markdown = {'mdformat'},
-  odin = { 'ols' },
-  qml = { 'qmlls' },
-  sh = { 'shfmt' },
-            sql = {'sqlfluff'},
-  toml = { 'taplo' },
-},
+    formatters_by_ft = {
+      -- c = { 'clangd' },
+      css = { 'biome' }, -- working
+      dosini = { 'taplo' }, -- working
+      -- html = { 'biome' }, -- need-to-enable-manually? maybe not, remind dosini
+      javascript = { 'biome' }, -- working
+      json = { 'biome' }, -- working
+      jsonc = { 'biome' }, -- working
+      lua = { 'stylua' }, -- working
+      markdown = { 'mdformat' }, -- working
+      -- odin = { 'ols' },
+      qml = { 'qmlls' },
+      sh = { 'shfmt' }, -- working
+      sql = { 'sql_formatter' }, -- working --ver sqlfluff and sqruff
+      toml = { 'taplo' }, -- working
+    },
   },
 }

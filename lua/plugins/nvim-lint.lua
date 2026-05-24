@@ -4,18 +4,19 @@ return {
   config = function()
     local lint = require 'lint'
     lint.linters_by_ft = {
-      c = { 'clangd' },
-      css = { 'biome' },
-            dosini = {'taplo'},
-      html = { 'biome' },
-      json = { 'biome' },
-      jsonc = { 'biome' },
-      lua = { 'luacheck' },
-      odin = { 'ols' },
+      -- c = { 'clangd' },
+      -- css = { 'biome' },
+      -- dosini = { 'taplo' },
+      -- html = { 'biome' },
+      -- javascript = {'biome'},
+      -- json = { 'biome' },
+      -- jsonc = { 'biome' },
+      lua = { 'luacheck' }, -- working
+      -- odin = { 'ols' },
       qml = { 'qmlls' },
-      sh = { 'shellcheck' },
-      sql = { 'sqlfluff' },
-      toml = { 'taplo' },
+      sh = { 'shellcheck' }, -- working
+      -- sql = { 'sqlfluff' },
+      -- toml = { 'taplo' },
     }
 
     -- ========================

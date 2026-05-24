@@ -6,11 +6,12 @@ return {
   config = function()
     local parsers = {
       'awk',
-      'bash', -- ok
-      'c', -- ok
+      'bash',
+      'c',
       'cmake',
-      'css', -- ok
+      'css',
       'diff',
+      'ecma',
       'editorconfig',
       'git_config',
       'git_rebase',
@@ -18,29 +19,30 @@ return {
       'gitignore',
       'gpg',
       'glsl',
-      'html', -- ok
+      'html',
       'html_tags',
       'http',
-      'hyprlang', -- ok
-      'ini', -- ok
+      'hyprlang',
+      'ini',
+      'javascript',
       'jq',
-      'json', -- ok
-      'lua', -- ok
+      'json',
+      'lua',
       'luadoc',
       'luap',
-      'make', -- ok
-      'markdown', -- ok
+      'make',
+      'markdown',
       'markdown_inline',
       'nginx',
-      'odin', -- ok
+      'odin',
       'properties',
-      'qmljs', -- ok
+      'qmljs',
       'query',
       'readline',
       'regex',
-      'sql', -- ok
+      'sql',
       'ssh_config',
-      'toml', -- ok
+      'toml',
       'vim',
       'vimdoc',
       'xcompose',

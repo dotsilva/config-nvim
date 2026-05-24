@@ -7,5 +7,7 @@ vim.filetype.add {
     hyprlang = 'hyprlang',
     nginx = 'nginx',
     odin = 'odin',
+    html = 'html',
+    sql = 'sql',
   },
 }
