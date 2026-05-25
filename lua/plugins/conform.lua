@@ -17,20 +17,25 @@ return {
       lsp_format = 'fallback',
     },
     formatters_by_ft = {
-      c = { 'clang-format' }, -- working -- alt clangd
+      c = { 'clang-format' }, -- working
       css = { 'biome' }, -- working
       dosini = { 'taplo' }, -- working
-      html = { 'htmlbeautifier' }, -- working -- alt biome
+      html = { 'htmlbeautifier' }, -- working -- alt biome, but it is not plug and play neither i could make it work
       javascript = { 'biome' }, -- working
       json = { 'biome' }, -- working
       jsonc = { 'biome' }, -- working
       lua = { 'stylua' }, -- working
       markdown = { 'mdformat' }, -- working
-      -- odin = { 'ols' },
-      -- qml = { 'qmlls' },
+      odin = { 'odinfmt' }, -- working
+      qml = { 'qmlformat' }, -- working
       sh = { 'shfmt' }, -- working
-      sql = { 'sql_formatter' }, -- working -- alt sqruff
+      sql = { 'sql_formatter' }, -- working
       toml = { 'taplo' }, -- working
+    },
+    formatters = {
+      sql_formatter = {
+        args = { '-l', 'sqlite' },
+      },
     },
   },
 }
