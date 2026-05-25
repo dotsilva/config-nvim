@@ -4,17 +4,18 @@ return {
   config = function()
     local lint = require 'lint'
     lint.linters_by_ft = {
-      -- c = { 'clangd' },
+      -- commented tools need configuration
+      c = { 'cpplint' },
       -- css = { 'biome' },
       -- dosini = { 'taplo' },
-      -- html = { 'biome' },
+      html = { 'htmlhint' }, -- alt biome, but it is not plug and play neither i could make it work
       -- javascript = {'biome'},
       -- json = { 'biome' },
       -- jsonc = { 'biome' },
-      lua = { 'luacheck' }, -- working
+      lua = { 'luacheck' },
       -- odin = { 'ols' },
-      qml = { 'qmlls' },
-      sh = { 'shellcheck' }, -- working
+      -- qml = { 'qmlls' }, -- check qmllint
+      sh = { 'shellcheck' },
       -- sql = { 'sqlfluff' },
       -- toml = { 'taplo' },
     }
