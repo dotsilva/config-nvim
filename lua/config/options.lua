@@ -37,12 +37,12 @@ vim.opt.softtabstop = 4 -- Treat 2 spaces as a tab when deleting/backspacing
 
 -- Diagnostic Config
 vim.diagnostic.config {
-  update_in_insert = false,
-  severity_sort = true,
-  float = { border = 'double', source = 'if_many' },
-  underline = { severity = { min = vim.diagnostic.severity.WARN } },
-  virtual_text = true,
-  virtual_lines = false,
-  -- Replace: jump = { float = true }
-  jump = { on_jump = function() vim.diagnostic.open_float() end },
+    update_in_insert = false,
+    severity_sort = true,
+    float = { border = 'double', source = 'if_many' },
+    underline = { severity = { min = vim.diagnostic.severity.WARN } },
+    virtual_text = true,
+    virtual_lines = false,
+    -- Replace: jump = { float = true }
+    jump = { on_jump = function() vim.diagnostic.open_float() end },
 }

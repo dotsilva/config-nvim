@@ -5,15 +5,15 @@ vim.o.background = 'dark'
 
 -- color palette
 local p = {
-  ground = '#1E1E1E',
-  black = '#858585',
-  red = '#F34E4E',
-  green = '#36DB36',
-  yellow = '#CFCF2A',
-  blue = '#7E7EFF',
-  magenta = '#E742E7',
-  cyan = '#38D5D5',
-  white = '#D4D4D4',
+    ground = '#1E1E1E',
+    black = '#858585',
+    red = '#F34E4E',
+    green = '#36DB36',
+    yellow = '#CFCF2A',
+    blue = '#7E7EFF',
+    magenta = '#E742E7',
+    cyan = '#38D5D5',
+    white = '#D4D4D4',
 }
 
 local function hi(group, opts) vim.api.nvim_set_hl(0, group, opts) end
@@ -47,8 +47,21 @@ hi('NormalFloat', { fg = p.black, bg = p.ground })
 hi('NormalNC', { fg = p.black, bg = p.ground })
 hi('ColorColumn', { bg = p.ground })
 hi('CursorColumn', { bg = p.ground })
-hi('CursorLine', { bg = 'NONE', bold = true, underdotted = true, sp = p.magenta })
-hi('CursorLineNr', { fg = p.magenta, bg = p.ground, bold = true, italic = true, underdotted = true, sp = p.magenta })
+hi(
+    'CursorLine',
+    { bg = 'NONE', bold = true, underdotted = true, sp = p.magenta }
+)
+hi(
+    'CursorLineNr',
+    {
+        fg = p.magenta,
+        bg = p.ground,
+        bold = true,
+        italic = true,
+        underdotted = true,
+        sp = p.magenta,
+    }
+)
 hi('LineNr', { fg = p.black, bg = p.ground, italic = true })
 hi('SignColumn', { fg = p.black, bg = p.ground })
 hi('FoldColumn', { fg = p.black, bg = p.ground })
@@ -87,19 +100,52 @@ hi('FloatTitle', { fg = p.blue, bg = p.ground, bold = true })
 -- ==========================================
 -- Diagnostics Text
 hi('DiagnosticError', { fg = p.red, bg = p.ground, bold = true, italic = true })
-hi('DiagnosticWarn', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
-hi('DiagnosticInfo', { fg = p.black, bg = p.ground, bold = true, italic = true })
-hi('DiagnosticHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
+hi(
+    'DiagnosticWarn',
+    { fg = p.yellow, bg = p.ground, bold = true, italic = true }
+)
+hi(
+    'DiagnosticInfo',
+    { fg = p.black, bg = p.ground, bold = true, italic = true }
+)
+hi(
+    'DiagnosticHint',
+    { fg = p.black, bg = p.ground, bold = true, italic = true }
+)
 
-hi('DiagnosticUnderlineError', { sp = p.red, undercurl = true, bold = true, italic = true })
-hi('DiagnosticUnderlineWarn', { sp = p.yellow, undercurl = true, bold = true, italic = true })
-hi('DiagnosticUnderlineInfo', { sp = p.magenta, undercurl = true, bold = true, italic = true })
-hi('DiagnosticUnderlineHint', { sp = p.magenta, undercurl = true, bold = true, italic = true })
+hi(
+    'DiagnosticUnderlineError',
+    { sp = p.red, undercurl = true, bold = true, italic = true }
+)
+hi(
+    'DiagnosticUnderlineWarn',
+    { sp = p.yellow, undercurl = true, bold = true, italic = true }
+)
+hi(
+    'DiagnosticUnderlineInfo',
+    { sp = p.magenta, undercurl = true, bold = true, italic = true }
+)
+hi(
+    'DiagnosticUnderlineHint',
+    { sp = p.magenta, undercurl = true, bold = true, italic = true }
+)
 
-hi('DiagnosticVirtualTextError', { fg = p.red, bg = p.ground, bold = true, italic = true })
-hi('DiagnosticVirtualTextWarn', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
-hi('DiagnosticVirtualTextInfo', { fg = p.black, bg = p.ground, bold = true, italic = true })
-hi('DiagnosticVirtualTextHint', { fg = p.black, bg = p.ground, bold = true, italic = true })
+hi(
+    'DiagnosticVirtualTextError',
+    { fg = p.red, bg = p.ground, bold = true, italic = true }
+)
+hi(
+    'DiagnosticVirtualTextWarn',
+    { fg = p.yellow, bg = p.ground, bold = true, italic = true }
+)
+hi(
+    'DiagnosticVirtualTextInfo',
+    { fg = p.black, bg = p.ground, bold = true, italic = true }
+)
+hi(
+    'DiagnosticVirtualTextHint',
+    { fg = p.black, bg = p.ground, bold = true, italic = true }
+)
 
 -- Lsp References
 hi('LspReferenceText', { bold = true, underdouble = true, sp = p.magenta })
@@ -219,12 +265,30 @@ hi('MiniPickMatchCurrent', { bg = 'NONE', underdotted = true, sp = p.cyan })
 hi('MiniPickMatchRanges', { fg = p.cyan, bold = true })
 
 -- Mini Statusline
-hi('MiniStatuslineModeNormal', { fg = p.ground, bg = p.black, bold = true, italic = true })
-hi('MiniStatuslineModeInsert', { fg = p.ground, bg = p.white, bold = true, italic = true })
-hi('MiniStatuslineModeVisual', { fg = p.ground, bg = p.cyan, bold = true, italic = true })
-hi('MiniStatuslineModeCommand', { fg = p.ground, bg = p.green, bold = true, italic = true })
-hi('MiniStatuslineModeReplace', { fg = p.ground, bg = p.magenta, bold = true, italic = true })
-hi('MiniStatuslineModeOther', { fg = p.ground, bg = p.black, bold = true, italic = true })
+hi(
+    'MiniStatuslineModeNormal',
+    { fg = p.ground, bg = p.black, bold = true, italic = true }
+)
+hi(
+    'MiniStatuslineModeInsert',
+    { fg = p.ground, bg = p.white, bold = true, italic = true }
+)
+hi(
+    'MiniStatuslineModeVisual',
+    { fg = p.ground, bg = p.cyan, bold = true, italic = true }
+)
+hi(
+    'MiniStatuslineModeCommand',
+    { fg = p.ground, bg = p.green, bold = true, italic = true }
+)
+hi(
+    'MiniStatuslineModeReplace',
+    { fg = p.ground, bg = p.magenta, bold = true, italic = true }
+)
+hi(
+    'MiniStatuslineModeOther',
+    { fg = p.ground, bg = p.black, bold = true, italic = true }
+)
 hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineLsp', { fg = p.magenta, bg = p.ground, bold = true })
@@ -242,7 +306,10 @@ hi('MiniIndentscopeSymbolOff', { fg = p.ground })
 -- Blink CMP (Strict Blue Borders)
 hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
 hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.ground })
-hi('BlinkCmpMenuSelection', { bg = 'NONE', bold = true, underdotted = true, sp = p.cyan })
+hi(
+    'BlinkCmpMenuSelection',
+    { bg = 'NONE', bold = true, underdotted = true, sp = p.cyan }
+)
 hi('BlinkCmpLabel', { fg = p.black })
 hi('BlinkCmpLabelMatch', { fg = p.magenta, bold = true })
 hi('BlinkCmpKind', { fg = p.black })
@@ -256,7 +323,10 @@ hi('LazyNormal', { fg = p.black, bg = p.ground })
 hi('LazyH1', { fg = p.blue, bold = true })
 hi('LazyH2', { fg = p.blue, bold = true })
 hi('LazyButton', { fg = p.black, bg = p.ground })
-hi('LazyButtonActive', { fg = p.cyan, bg = 'NONE', bold = true, underdotted = true, sp = p.cyan })
+hi(
+    'LazyButtonActive',
+    { fg = p.cyan, bg = 'NONE', bold = true, underdotted = true, sp = p.cyan }
+)
 hi('LazyDir', { fg = p.cyan })
 hi('LazyUrl', { fg = p.cyan })
 hi('LazyCommit', { fg = p.cyan })
@@ -288,7 +358,10 @@ hi('MasonHighlightBlock', { fg = p.ground, bg = p.cyan })
 hi('MasonHighlightBlockBold', { fg = p.ground, bg = p.cyan, bold = true })
 hi('MasonHighlightSecondary', { fg = p.yellow })
 hi('MasonHighlightBlockSecondary', { fg = p.ground, bg = p.yellow })
-hi('MasonHighlightBlockBoldSecondary', { fg = p.ground, bg = p.yellow, bold = true })
+hi(
+    'MasonHighlightBlockBoldSecondary',
+    { fg = p.ground, bg = p.yellow, bold = true }
+)
 hi('MasonLink', { fg = p.cyan })
 hi('MasonMuted', { fg = p.black, italic = true })
 hi('MasonMutedBlock', { fg = p.black, bg = p.ground })
