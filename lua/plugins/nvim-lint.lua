@@ -6,19 +6,17 @@ return {
         lint.linters_by_ft = {
             -- commented tools need configuration
             -- c = { 'clang-tidy' },
-            -- css = { 'biome' },
-            -- dosini = { 'taplo' },
+            css = { 'biomejs' },
             html = { 'htmlhint' }, -- alt biome, but it is not plug and play neither i could make it work
-            -- javascript = {'biome'},
-            -- json = { 'biome' },
-            -- jsonc = { 'biome' },
+            javascript = { 'biomejs' },
+            json = { 'biomejs' },
+            jsonc = { 'biomejs' },
             lua = { 'luacheck' },
             -- odin = { 'ols' },
             -- qml = { 'qmlls' }, -- check qmllint
             sh = { 'shellcheck' },
             -- sql = { 'sqlfluff' },
-            -- toml = { 'taplo' },
-            -- zig = { 'zls' },
+            -- zig = { 'zls' }, -- let the compiler do it
         }
 
         -- ========================
