@@ -8,13 +8,12 @@ return {
         config = function()
             local ensure_installed = {
                 'clang-format', -- c
-                'cpplint', -- c
                 'biome', -- css, javascript, json, jsonc
                 'htmlhint', -- html
                 'htmlbeautifier', -- html
                 'luacheck', -- lua
                 'mdformat', -- markdown
-                'ols', -- odin
+                -- 'ols', -- odin
                 'qmlls', -- qml
                 'shfmt', -- bash
                 'shellcheck', -- bash
@@ -22,6 +21,7 @@ return {
                 'stylua', -- lua
                 'taplo', -- toml, ini
                 'tree-sitter-cli', -- required by nvim-treesitter
+                'zls', -- zig
             }
 
             require('mason-tool-installer').setup {
