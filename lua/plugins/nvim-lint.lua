@@ -5,7 +5,7 @@ return {
         local lint = require 'lint'
         lint.linters_by_ft = {
             -- commented tools need configuration
-            c = { 'cpplint' },
+            -- c = { 'clang-tidy' },
             -- css = { 'biome' },
             -- dosini = { 'taplo' },
             html = { 'htmlhint' }, -- alt biome, but it is not plug and play neither i could make it work
@@ -18,6 +18,7 @@ return {
             sh = { 'shellcheck' },
             -- sql = { 'sqlfluff' },
             -- toml = { 'taplo' },
+            -- zig = { 'zls' },
         }
 
         -- ========================
