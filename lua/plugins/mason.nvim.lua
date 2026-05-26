@@ -7,21 +7,21 @@ return {
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         config = function()
             local ensure_installed = {
-                'clang-format', -- c
-                'biome', -- css, javascript, json, jsonc
-                'htmlhint', -- html
-                'htmlbeautifier', -- html
-                'luacheck', -- lua
-                'mdformat', -- markdown
-                -- 'ols', -- odin
-                'qmlls', -- qml
-                'shfmt', -- bash
-                'shellcheck', -- bash
-                'sql-formatter', -- sql
-                'stylua', -- lua
-                'taplo', -- toml, ini
-                'tree-sitter-cli', -- required by nvim-treesitter
-                'zls', -- zig
+                'clang-format', --c
+                'biome', --css, javascript, json, jsonc
+                'htmlhint', --html
+                'htmlbeautifier', --html
+                'luacheck', --lua
+                'mdformat', --markdown
+                --'ols', --odin
+                'qmlls', --qml
+                'shfmt', --bash
+                'shellcheck', --bash
+                'sqlfluff', --sql
+                'stylua', --lua
+                'taplo', --toml, ini
+                'tree-sitter-cli', --required by nvim-treesitter
+                'zls', --zig
             }
 
             require('mason-tool-installer').setup {
