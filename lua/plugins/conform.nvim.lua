@@ -31,11 +31,12 @@ return {
             jsonc = { 'biome' },
             lua = { 'stylua' },
             markdown = { 'mdformat' },
-            odin = { 'odinfmt' },
+            -- odin = { 'odinfmt' },
             qml = { 'qmlformat' },
             sh = { 'shfmt' },
             sql = { 'sql_formatter' },
             toml = { 'taplo' },
+            zig = { 'zigfmt' },
         },
         formatters = {
             sql_formatter = {
