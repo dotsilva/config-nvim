@@ -34,7 +34,7 @@ return {
             'markdown',
             'markdown_inline',
             'nginx',
-            'odin',
+            -- 'odin',
             'properties',
             'qmljs',
             'query',
@@ -46,6 +46,7 @@ return {
             'vim',
             'vimdoc',
             'xcompose',
+            'zig',
         }
 
         require('nvim-treesitter').install(parsers)
