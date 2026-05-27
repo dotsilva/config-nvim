@@ -34,7 +34,7 @@ return {
             'markdown',
             'markdown_inline',
             'nginx',
-            -- 'odin',
+            'odin',
             'properties',
             'qmljs',
             'query',
