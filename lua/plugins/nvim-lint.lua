@@ -14,7 +14,6 @@ return {
             json = { 'biomejs' }, --mason: biome
             jsonc = { 'biomejs' }, --mason: biome
             lua = { 'luacheck' }, --mason
-            --odin = { 'odin' }, --system
             --qml = { 'qmllint' }, --system: qt5-declarative
             sh = { 'shellcheck' }, --mason
             sql = { 'sqlfluff' }, --mason

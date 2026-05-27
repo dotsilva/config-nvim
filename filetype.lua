@@ -6,7 +6,6 @@ vim.filetype.add {
         gitrebase = 'gitrebase',
         hyprlang = 'hyprlang',
         nginx = 'nginx',
-        odin = 'odin',
         html = 'html',
         sql = 'sql',
     },
