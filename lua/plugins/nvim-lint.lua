@@ -5,9 +5,7 @@ return {
         local lint = require 'lint'
         lint.linters_by_ft = {
             --commented tools need configuration
-            --TODO: try other compilers as linters
-            --maybe some flags are needed, ver sqlfluff
-            --c = { 'zig' }, --TODO:try to use zig compiler for this
+            c = { 'clangtidy' }, --system: clang
             css = { 'biomejs' }, --mason: biome
             html = { 'htmlhint' }, --alt biome, but it is not plug and play neither i could make it work
             javascript = { 'biomejs' }, --mason: biome
@@ -20,6 +18,11 @@ return {
             zig = { 'zig' }, --system
         }
 
+        lint.linters.clangtidy.args = {
+            '--quiet',
+            '--checks=*',
+        }
+
         lint.linters.sqlfluff.args = {
             'lint',
             '--format',
@@ -28,6 +31,7 @@ return {
             'raw',
             '--dialect',
             'sqlite',
+            '-',
         }
 
         -- ========================
