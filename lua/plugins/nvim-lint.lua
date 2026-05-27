@@ -4,19 +4,31 @@ return {
     config = function()
         local lint = require 'lint'
         lint.linters_by_ft = {
-            -- commented tools need configuration
-            -- c = { 'clang-tidy' },
-            css = { 'biomejs' },
-            html = { 'htmlhint' }, -- alt biome, but it is not plug and play neither i could make it work
-            javascript = { 'biomejs' },
-            json = { 'biomejs' },
-            jsonc = { 'biomejs' },
-            lua = { 'luacheck' },
-            -- odin = { 'ols' },
-            -- qml = { 'qmlls' }, -- check qmllint
-            sh = { 'shellcheck' },
-            -- sql = { 'sqlfluff' },
-            -- zig = { 'zls' }, -- let the compiler do it
+            --commented tools need configuration
+            --TODO: try other compilers as linters
+            --maybe some flags are needed, ver sqlfluff
+            --c = { 'zig' }, --TODO:try to use zig compiler for this
+            css = { 'biomejs' }, --mason: biome
+            html = { 'htmlhint' }, --alt biome, but it is not plug and play neither i could make it work
+            javascript = { 'biomejs' }, --mason: biome
+            json = { 'biomejs' }, --mason: biome
+            jsonc = { 'biomejs' }, --mason: biome
+            lua = { 'luacheck' }, --mason
+            --odin = { 'odin' }, --system
+            --qml = { 'qmllint' }, --system: qt5-declarative
+            sh = { 'shellcheck' }, --mason
+            sql = { 'sqlfluff' }, --mason
+            zig = { 'zig' }, --system
+        }
+
+        lint.linters.sqlfluff.args = {
+            'lint',
+            '--format',
+            'json',
+            '--templater',
+            'raw',
+            '--dialect',
+            'sqlite',
         }
 
         -- ========================
