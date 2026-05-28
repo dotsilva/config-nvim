@@ -63,12 +63,6 @@ return {
             return str .. '%#MiniStatuslineDevinfo#'
         end
 
-        local function custom_lsp()
-            local str = MiniStatusline.section_lsp { trunc_width = 75 }
-            if str == '' then return '' end
-            return '%#MiniStatuslineLsp#' .. str .. ' %#MiniStatuslineDevinfo#'
-        end
-
         statusline.setup {
             use_icons = false,
             content = {
@@ -78,7 +72,6 @@ return {
                     local git = MiniStatusline.section_git { trunc_width = 40 }
                     local diff = custom_diff()
                     local diagnostics = custom_diagnostics()
-                    local lsp = custom_lsp()
                     local filename =
                         MiniStatusline.section_filename { trunc_width = 140 }
                     local fileinfo =
@@ -92,7 +85,7 @@ return {
                         { hl = mode_hl, strings = { mode } },
                         {
                             hl = 'MiniStatuslineDevinfo',
-                            strings = { git, diff, diagnostics, lsp },
+                            strings = { git, diff, diagnostics },
                         },
                         '%<',
                         { hl = mode_hl, strings = { filename } },
@@ -104,7 +97,6 @@ return {
             },
         }
 
-        ---@diagnostic disable-next-line: duplicate-set-field
         statusline.section_location = function()
             return string.format('chars: %d', vim.fn.wordcount().chars)
         end
