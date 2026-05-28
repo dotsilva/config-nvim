@@ -31,11 +31,10 @@ vim.o.cursorcolumn = false
 vim.o.scrolloff = 10
 vim.o.confirm = true
 
--- Indentation: 2 spaces, no tabs. The truth.
 vim.opt.tabstop = 4 -- Number of spaces a <Tab> counts for
 vim.opt.shiftwidth = 4 -- Size of an indent operation (>> or <<)
 vim.opt.expandtab = true -- Convert tabs to spaces automatically
-vim.opt.softtabstop = 4 -- Treat 2 spaces as a tab when deleting/backspacing
+vim.opt.softtabstop = 4 -- Treat 4 spaces as a tab when deleting/backspacing
 
 -- Diagnostic Config
 vim.diagnostic.config {
@@ -48,3 +47,12 @@ vim.diagnostic.config {
     -- Replace: jump = { float = true }
     jump = { on_jump = function() vim.diagnostic.open_float() end },
 }
+
+-- Oil as greeter when using nvim without any arguments
+if vim.fn.argc() == 0 then
+    vim.api.nvim_create_autocmd('VimEnter', {
+        callback = function()
+            vim.schedule(function() pcall(require('oil').open) end)
+        end,
+    })
+end
