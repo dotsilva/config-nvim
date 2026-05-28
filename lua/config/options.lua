@@ -7,6 +7,8 @@ vim.o.number = true
 vim.o.mouse = 'a'
 vim.o.showmode = false
 
+vim.o.winborder = 'double'
+
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
