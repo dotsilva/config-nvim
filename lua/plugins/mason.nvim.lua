@@ -7,7 +7,7 @@ return {
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         config = function()
             local ensure_installed = {
-                --'clangd', -c
+                --'clangd', --c
                 'clang-format', --c
                 'biome', --css, javascript, json, jsonc
                 'htmlhint', --html
