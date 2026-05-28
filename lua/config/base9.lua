@@ -51,17 +51,14 @@ hi(
     'CursorLine',
     { bg = 'NONE', bold = true, underdotted = true, sp = p.magenta }
 )
-hi(
-    'CursorLineNr',
-    {
-        fg = p.magenta,
-        bg = p.ground,
-        bold = true,
-        italic = true,
-        underdotted = true,
-        sp = p.magenta,
-    }
-)
+hi('CursorLineNr', {
+    fg = p.magenta,
+    bg = p.ground,
+    bold = true,
+    italic = true,
+    underdotted = true,
+    sp = p.magenta,
+})
 hi('LineNr', { fg = p.black, bg = p.ground, italic = true })
 hi('SignColumn', { fg = p.black, bg = p.ground })
 hi('FoldColumn', { fg = p.black, bg = p.ground })
