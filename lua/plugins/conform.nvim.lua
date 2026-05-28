@@ -33,9 +33,7 @@ return {
             jsonc = { 'biome' }, --mason
             lua = { 'stylua' }, --mason
             markdown = { 'mdformat', 'injected' }, --mason --injected handle code blocks to their formatters
-            qml = { 'qmlformat' }, --system: qt5-declarative
             sh = { 'shfmt' }, --mason
-            --sql = { 'sql_formatter' }, --mason: sql-formatter --alternative formatter for sqlite
             sql = { 'sqlfluff' }, --mason
             toml = { 'taplo' }, --mason
             zig = { 'zigfmt' }, --system: zig
@@ -53,9 +51,6 @@ return {
                     '-',
                 },
             },
-            --sql_formatter = {
-            --    args = { '-l', 'sqlite' },
-            --},
         },
     },
 }
