@@ -14,7 +14,6 @@ return {
                 'htmlbeautifier', --html
                 'luacheck', --lua
                 'mdformat', --markdown
-                --'qmlls', --qml
                 'shfmt', --bash
                 'shellcheck', --bash
                 'sqlfluff', --sql
