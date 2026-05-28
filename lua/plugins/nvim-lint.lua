@@ -5,14 +5,13 @@ return {
         local lint = require 'lint'
         lint.linters_by_ft = {
             --commented tools need configuration
-            c = { 'clangtidy' }, --system: clang
+            c = { 'clangtidy' }, --system: clang, which is called as clang-tidy in cli
             css = { 'biomejs' }, --mason: biome
             html = { 'htmlhint' }, --alt biome, but it is not plug and play neither i could make it work
             javascript = { 'biomejs' }, --mason: biome
             json = { 'biomejs' }, --mason: biome
             jsonc = { 'biomejs' }, --mason: biome
             lua = { 'luacheck' }, --mason
-            --qml = { 'qmllint' }, --system: qt5-declarative
             sh = { 'shellcheck' }, --mason
             sql = { 'sqlfluff' }, --mason
             zig = { 'zig' }, --system
