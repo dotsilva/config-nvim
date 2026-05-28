@@ -11,7 +11,6 @@ vim.g.maplocalleader = ' '
 require 'config.options'
 require 'config.keymaps'
 require 'config.autocmds'
-require 'config.dashboard'
 require 'config.health'
 require 'config.base9'
 
