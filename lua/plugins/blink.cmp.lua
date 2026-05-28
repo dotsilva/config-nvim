@@ -2,27 +2,7 @@ return {
     'saghen/blink.cmp',
     event = 'VimEnter',
     version = '1.*',
-    dependencies = {
-        {
-            'L3MON4D3/LuaSnip',
-            version = '2.*',
-            build = (function()
-                if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-                    return
-                end
-                return 'make install_jsregexp'
-            end)(),
-            dependencies = {
-                -- {
-                --   'rafamadriz/friendly-snippets',
-                --   config = function()
-                --     require('luasnip.loaders.from_vscode').lazy_load()
-                --   end,
-                -- },
-            },
-            opts = {},
-        },
-    },
+    dependencies = {},
     opts = {
         keymap = {
             preset = 'default',
@@ -31,20 +11,17 @@ return {
             nerd_font_variant = 'mono',
         },
         completion = {
-            menu = { border = 'double' },
             documentation = {
                 auto_show = false,
                 auto_show_delay_ms = 500,
-                window = { border = 'double' },
             },
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets' },
+            default = { 'path' },
         },
-        snippets = { preset = 'luasnip' },
         -- fuzzy = { implementation = 'lua' },
         -- fuzzy = { implementation = 'prefer_rust_with_warning' },
         fuzzy = { implementation = 'prefer_rust' },
-        signature = { enabled = true, window = { border = 'double' } },
+        signature = { enabled = true },
     },
 }
