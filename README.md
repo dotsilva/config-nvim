@@ -1,15 +1,14 @@
-
 # base9.nvim: a logical and simple nvim theme using terminal colors
 
 - ground: `#1E1E1E`
-- black:  `#858585`
-- red:    `#FF4949`
-- green:  `#36DB36`
+- black: `#858585`
+- red: `#FF4949`
+- green: `#36DB36`
 - yellow: `#CFCF2A`
-- blue:   `#7E7EFF`
+- blue: `#7E7EFF`
 - magenta:`#E742E7`
-- cyan:   `#38D5D5`
-- white:  `#D4D4D4`
+- cyan: `#38D5D5`
+- white: `#D4D4D4`
 
 ## syntax highlight
 
