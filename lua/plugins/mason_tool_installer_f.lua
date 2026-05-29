@@ -6,7 +6,6 @@ do
     local is_termux = vim.loop.fs_stat '/data/data/com.termux'
     if is_termux then
         ensure_installed = {
-            'clang-format',
             'mdformat',
             'shfmt',
             'shellcheck',
