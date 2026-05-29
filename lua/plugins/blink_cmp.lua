@@ -1,9 +1,12 @@
-return {
-    'saghen/blink.cmp',
-    event = 'VimEnter',
-    version = '1.*',
-    dependencies = {},
-    opts = {
+do
+    -- this is nested { { ... } } to handle the options
+    vim.pack.add {
+        {
+            src = 'https://github.com/saghen/blink.cmp',
+            version = vim.version.range '1.*',
+        },
+    }
+    require('blink.cmp').setup {
         keymap = {
             preset = 'default',
         },
@@ -23,5 +26,5 @@ return {
         -- fuzzy = { implementation = 'prefer_rust_with_warning' },
         fuzzy = { implementation = 'prefer_rust' },
         signature = { enabled = true },
-    },
-}
+    }
+end

@@ -1,61 +1,33 @@
 --[[
 For of Him, and through Him, and unto Him, are all things.
 To Him be the glory for ever. Amen. - Romans 11:36 ASV 1901
-  ]]
+]]
 
--- 1. Leader keys MUST be set before anything else, or plugins bind to the wrong key
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+do
+    -- Enable faster startup by caching compiled Lua modules
+    vim.loader.enable()
 
--- 2. Load the foundational layer (Priority logic and UI)
-require 'config.options'
-require 'config.keymaps'
-require 'config.autocmds'
-require 'config.health'
-require 'config.base9'
+    -- leader keys MUST be set before anything else, or plugins bind to the wrong key
+    vim.g.mapleader = ' '
+    vim.g.maplocalleader = ' '
 
--- 3. Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-    local out = vim.fn.system {
-        'git',
-        'clone',
-        '--filter=blob:none',
-        '--branch=stable',
-        lazyrepo,
-        lazypath,
-    }
-    if vim.v.shell_error ~= 0 then
-        error('Error cloning lazy.nvim:\n' .. out)
-    end
+    -- config
+    require 'config.vim_pack'
+    require 'config.options'
+    require 'config.keymaps'
+    require 'config.autocmds'
+    require 'config.health'
+    require 'config.base9'
+
+    -- plugins
+    require 'plugins.oil_nvim'
+    require 'plugins.nvim_treesitter'
+    require 'plugins.blink_cmp'
+    require 'plugins.mason_nvim'
+    require 'plugins.mason_tool_installer_nvim'
+    require 'plugins.mini_diff'
+    require 'plugins.mini_statusline'
+    require 'plugins.conform_nvim'
+    require 'plugins.nvim_lint'
+    require 'plugins.which_key'
 end
-vim.opt.rtp:prepend(lazypath)
-
--- 4. Execute the package manager
-require('lazy').setup({
-
-    -- Automatically sweep and load everything in lua/custom/plugins/
-    { import = 'plugins' },
-}, {
-    ui = {
-        border = 'double',
-
-        -- Evaluates vim.g.have_nerd_font (which you will define in config.options)
-        icons = vim.g.have_nerd_font and {} or {
-            cmd = '⌘',
-            config = '🛠',
-            event = '📅',
-            ft = '📂',
-            init = '⚙',
-            keys = '🗝',
-            plugin = '🔌',
-            runtime = '💻',
-            require = '🌙',
-            source = '📄',
-            start = '🚀',
-            task = '📌',
-            lazy = '💤 ',
-        },
-    },
-})

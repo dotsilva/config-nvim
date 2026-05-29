@@ -1,19 +1,13 @@
-return {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-        win = {
-            border = 'double',
-        },
-    },
-    keys = {
-        {
-            '<leader>?',
-            function() require('which-key').show { global = false } end,
-            desc = 'Buffer Local Keymaps (which-key)',
-        },
-    },
-}
+do
+    vim.pack.add { 'https://github.com/folke/which-key.nvim' }
+    require('which-key').setup {
+        -- Delay between pressing a key and opening which-key (milliseconds)
+        delay = 0,
+    }
+    vim.keymap.set(
+        'n',
+        '<leader>?',
+        function() require('which-key').show { global = false } end,
+        { desc = 'Buffer Local Keymaps (which-key)' }
+    )
+end
