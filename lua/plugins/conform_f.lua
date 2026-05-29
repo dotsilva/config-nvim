@@ -1,12 +1,25 @@
 do
     vim.pack.add { 'https://github.com/stevearc/conform.nvim' }
     require('conform').setup {
+
         format_on_save = function(bufnr)
             -- You can specify filetypes to autoformat on save here:
             local enabled_filetypes = {
+                -- c = true,
+                css = true,
+                dosini = true,
+                html = true,
+                javascript = true,
+                json = true,
+                jsonc = true,
                 lua = true,
-                -- python = true,
+                markdown = true,
+                sh = true,
+                sql = true,
+                toml = true,
+                zig = true,
             }
+
             if enabled_filetypes[vim.bo[bufnr].filetype] then
                 return { timeout_ms = 1000 }
             else
@@ -18,7 +31,7 @@ do
             c = { 'clang-format' }, --mason
             css = { 'biome' }, --mason
             dosini = { 'taplo' }, --mason
-            html = { 'htmlbeautifier' }, --mason --alt biome, but i couldnt make it work
+            html = { 'superhtml' }, --mason --alt biome, but i couldnt make it work
             javascript = { 'biome' }, --mason
             json = { 'biome' }, --mason
             jsonc = { 'biome' }, --mason
