@@ -1,6 +1,9 @@
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
+-- this supress the default splash screen appearing for a slightly moment
+vim.opt.shortmess:append 'I'
+
 vim.o.termguicolors = true
 vim.opt.guicursor = 'n-v-c-i:block-blinkon0'
 vim.o.number = true
@@ -47,12 +50,3 @@ vim.diagnostic.config {
     -- Replace: jump = { float = true }
     jump = { on_jump = function() vim.diagnostic.open_float() end },
 }
-
--- Oil as greeter when using nvim without any arguments
-if vim.fn.argc() == 0 then
-    vim.api.nvim_create_autocmd('VimEnter', {
-        callback = function()
-            vim.schedule(function() pcall(require('oil').open) end)
-        end,
-    })
-end
