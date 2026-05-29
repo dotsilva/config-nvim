@@ -25,7 +25,8 @@ do
         cmd = 'superhtml',
         stdin = false,
         args = {
-            'check' --[['--syntax-only']],
+            'check',
+            '--syntax-only',
         },
         stream = 'stderr',
         ignore_exitcode = true,
