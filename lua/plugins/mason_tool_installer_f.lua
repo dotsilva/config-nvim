@@ -6,7 +6,7 @@ do
     local is_termux = vim.loop.fs_stat '/data/data/com.termux'
     if is_termux then
         ensure_installed = {
-            'clang-format', --c
+            'clang-format', -- c
             'biome', -- css, javascript, json, jsonc
             -- 'luacheck', -- lua
             'mdformat', -- markdown
@@ -18,6 +18,13 @@ do
             'taplo', -- toml, ini
             'tree-sitter-cli', -- required by nvim-treesitter
         }
+        vim.fn.jobstart({ 'pkg', 'install', 'luacheck', 'stylua' }, {
+            on_exit = function(_, code)
+                if code == 0 then
+                    vim.notify 'installed with pkg: luacheck, stylua'
+                end
+            end,
+        })
     else
         ensure_installed = {
             'clang-format', -- c
