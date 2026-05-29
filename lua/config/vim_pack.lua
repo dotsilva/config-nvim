@@ -1,24 +1,25 @@
 do
-    -- [[ Intro to `vim.pack` ]]
-    -- `vim.pack` is a new plugin manager built into Neovim,
+    -- [[ intro to `vim.pack` ]]
+    -- `vim.pack` is a new plugin manager built into neovim,
     --  which provides a Lua interface for installing and managing plugins.
     --
-    --  See `:help vim.pack`, `:help vim.pack-examples` or the
+    --  see `:help vim.pack`, `:help vim.pack-examples` or the
     --  excellent blog post from the creator of vim.pack and mini.nvim:
     --  https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
     --
-    --  To inspect plugin state and pending updates, run
+    --  to inspect plugin state and pending updates, run
     --    :lua vim.pack.update(nil, { offline = true })
     --
-    --  To update plugins, run
+    --  to update plugins, run
     --    :lua vim.pack.update()
     --
     --
-    --  Throughout the rest of the config there will be examples
+    --  throughout the rest of the config there will be examples
     --  of how to install and configure plugins using `vim.pack`.
     --
-    --  In this section we set up some autocommands to run build
+    --  in this section we set up some autocommands to run build
     --  steps for certain plugins after they are installed or updated.
+
     --[[
     local function run_build(name, cmd, cwd)
         local result = vim.system(cmd, { cwd = cwd }):wait()
@@ -34,15 +35,17 @@ do
         end
     end
     ]]
-    -- This autocommand runs after a plugin is installed or updated and
-    --  runs the appropriate build command for that plugin if necessary.
-    --
+
+    -- this autocommand runs after a plugin is installed or updated and
+    -- runs the appropriate build command for that plugin if necessary.
+
     -- See `:help vim.pack-events`
     vim.api.nvim_create_autocmd('PackChanged', {
         callback = function(ev)
             local name = ev.data.spec.name
             local kind = ev.data.kind
             if kind ~= 'install' and kind ~= 'update' then return end
+
             --[[
             if
                 name == 'telescope-fzf-native.nvim'
@@ -66,6 +69,7 @@ do
                 return
             end
             ]]
+
             if name == 'nvim-treesitter' then
                 if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
                 vim.cmd 'TSUpdate'

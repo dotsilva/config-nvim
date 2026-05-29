@@ -3,17 +3,17 @@ do
 
     local lint = require 'lint'
     lint.linters_by_ft = {
-        --commented tools need configuration
-        c = { 'clangtidy' }, --system: clang, which is called as clang-tidy in cli
-        css = { 'biomejs' }, --mason: biome
-        html = { 'superhtml' }, --mason --alt biome, but i couldnt make it work
-        javascript = { 'biomejs' }, --mason: biome
-        json = { 'biomejs' }, --mason: biome
-        jsonc = { 'biomejs' }, --mason: biome
-        lua = { 'luacheck' }, --mason
-        sh = { 'shellcheck' }, --mason
-        sql = { 'sqlfluff' }, --mason
-        zig = { 'zig' }, --system
+        -- commented tools need configuration
+        c = { 'clangtidy' }, -- system: clang, which is called as clang-tidy in cli
+        css = { 'biomejs' }, -- mason: biome
+        html = { 'superhtml' }, -- mason
+        javascript = { 'biomejs' }, -- mason: biome
+        json = { 'biomejs' }, -- mason: biome
+        jsonc = { 'biomejs' }, -- mason: biome
+        lua = { 'luacheck' }, -- mason -- system (termux)
+        sh = { 'shellcheck' }, -- mason
+        sql = { 'sqlfluff' }, -- mason
+        zig = { 'zig' }, -- system
     }
 
     local superhtml_pattern = '^([^:]+):(%d+):(%d+): (.+)$'
@@ -56,14 +56,14 @@ do
         '-',
     }
 
-    -- Create autocommand which carries out the actual linting
+    -- create autocommand which carries out the actual linting
     -- on the specified events.
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
         group = lint_augroup,
         callback = function()
-            -- Only run the linter in buffers that you can modify in order to
-            -- avoid superfluous noise, notably within the handy LSP pop-ups that
+            -- only run the linter in buffers that you can modify in order to
+            -- avoid superfluous noise, notably within the handy lsp pop-ups that
             -- describe the hovered symbol using Markdown.
             if vim.bo.modifiable then lint.try_lint() end
         end,

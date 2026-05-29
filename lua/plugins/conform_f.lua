@@ -3,9 +3,9 @@ do
     require('conform').setup {
 
         format_on_save = function(bufnr)
-            -- You can specify filetypes to autoformat on save here:
+            -- you can specify filetypes to autoformat on save here:
             local enabled_filetypes = {
-                -- c = true,
+                c = true,
                 css = true,
                 dosini = true,
                 html = true,
@@ -28,19 +28,19 @@ do
         end,
 
         formatters_by_ft = {
-            c = { 'clang-format' }, --mason
-            css = { 'biome' }, --mason
-            dosini = { 'taplo' }, --mason
-            html = { 'superhtml' }, --mason --alt biome, but i couldnt make it work
-            javascript = { 'biome' }, --mason
-            json = { 'biome' }, --mason
-            jsonc = { 'biome' }, --mason
-            lua = { 'stylua' }, --mason
-            markdown = { 'mdformat', 'injected' }, --mason --injected handle code blocks to their formatters
-            sh = { 'shfmt' }, --mason
-            sql = { 'sqlfluff' }, --mason
-            toml = { 'taplo' }, --mason
-            zig = { 'zigfmt' }, --system: zig
+            c = { 'clang-format' }, -- mason
+            css = { 'biome' }, -- mason
+            dosini = { 'taplo' }, -- mason
+            html = { 'superhtml' }, -- mason
+            javascript = { 'biome' }, -- mason
+            json = { 'biome' }, -- mason
+            jsonc = { 'biome' }, -- mason
+            lua = { 'stylua' }, -- mason -- system (termux)
+            markdown = { 'mdformat', 'injected' }, -- mason -- injected handle code blocks to their formatters
+            sh = { 'shfmt' }, -- mason
+            sql = { 'sqlfluff' }, -- mason
+            toml = { 'taplo' }, -- mason
+            zig = { 'zigfmt' }, -- system: zig
         },
 
         formatters = {

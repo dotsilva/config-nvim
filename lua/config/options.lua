@@ -1,4 +1,4 @@
--- Set to true if you have a Nerd Font installed
+-- set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
 -- this supress the default splash screen appearing for a slightly moment
@@ -12,7 +12,7 @@ vim.o.showmode = false
 
 vim.o.winborder = 'double'
 
--- Sync clipboard between OS and Neovim.
+-- sync clipboard between OS and Neovim.
 vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 
 vim.o.breakindent = true
@@ -34,12 +34,12 @@ vim.o.cursorcolumn = false
 vim.o.scrolloff = 10
 vim.o.confirm = true
 
-vim.opt.tabstop = 4 -- Number of spaces a <Tab> counts for
-vim.opt.shiftwidth = 4 -- Size of an indent operation (>> or <<)
-vim.opt.expandtab = true -- Convert tabs to spaces automatically
-vim.opt.softtabstop = 4 -- Treat 4 spaces as a tab when deleting/backspacing
+vim.opt.tabstop = 4 -- number of spaces a <Tab> counts for
+vim.opt.shiftwidth = 4 -- size of an indent operation (>> or <<)
+vim.opt.expandtab = true -- convert tabs to spaces automatically
+vim.opt.softtabstop = 4 -- treat 4 spaces as a tab when deleting/backspacing
 
--- Diagnostic Config
+-- diagnostic config
 vim.diagnostic.config {
     update_in_insert = false,
     severity_sort = true,
@@ -47,6 +47,6 @@ vim.diagnostic.config {
     underline = { severity = { min = vim.diagnostic.severity.WARN } },
     virtual_text = true,
     virtual_lines = false,
-    -- Replace: jump = { float = true }
+    -- replace: jump = { float = true }
     jump = { on_jump = function() vim.diagnostic.open_float() end },
 }

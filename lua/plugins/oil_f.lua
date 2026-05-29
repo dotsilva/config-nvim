@@ -7,7 +7,7 @@ do
             show_hidden = true,
         },
 
-        -- Preview Window (Hit <C-p> inside Oil to toggle it)
+        -- preview Window (hit <C-p> inside oil to toggle it)
         preview_win = {
             update_on_cursor_moved = true,
         },

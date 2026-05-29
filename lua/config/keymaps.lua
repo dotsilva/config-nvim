@@ -1,7 +1,7 @@
--- Clear highlights on search when pressing <Esc> in normal mode
+-- clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic Config & Keymaps
+-- diagnostic config & keymaps
 vim.keymap.set(
     'n',
     '<leader>q',
@@ -9,7 +9,7 @@ vim.keymap.set(
     { desc = 'Open diagnostic [Q]uickfix list' }
 )
 
--- Exit terminal mode in the builtin terminal
+-- exit terminal mode in the builtin terminal
 vim.keymap.set(
     't',
     '<Esc><Esc>',
@@ -17,7 +17,7 @@ vim.keymap.set(
     { desc = 'Exit terminal mode' }
 )
 
--- Keybinds to make split navigation easier
+-- keybinds to make split navigation easier
 vim.keymap.set(
     'n',
     '<C-h>',
