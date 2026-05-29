@@ -3,20 +3,17 @@ do
         'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
     }
     local ensure_installed = {
-        --'clangd', --c
         'clang-format', --c
         'biome', --css, javascript, json, jsonc
-        'htmlhint', --html
-        'htmlbeautifier', --html
         'luacheck', --lua
         'mdformat', --markdown
         'shfmt', --bash
         'shellcheck', --bash
         'sqlfluff', --sql
         'stylua', --lua
+        'superhtml', --html
         'taplo', --toml, ini
         'tree-sitter-cli', --required by nvim-treesitter
-        --'zls', --zig
     }
 
     require('mason-tool-installer').setup {
