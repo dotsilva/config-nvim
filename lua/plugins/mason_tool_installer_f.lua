@@ -6,30 +6,26 @@ do
     local is_termux = vim.loop.fs_stat '/data/data/com.termux'
     if is_termux then
         ensure_installed = {
-            'clang-format', -- c
-            'biome', -- css, javascript, json, jsonc
-            -- 'luacheck', -- lua
-            'mdformat', -- markdown
-            'shfmt', -- bash
-            'shellcheck', -- bash
-            'sqlfluff', -- sql
-            -- 'stylua', -- lua
-            'superhtml', -- html
-            'taplo', -- toml, ini
+            'clang-format',
+            'mdformat',
+            'shfmt',
+            'shellcheck',
+            'sqlfluff',
+            'superhtml',
+            'taplo',
             'tree-sitter-cli', -- required by nvim-treesitter
         }
     else
         ensure_installed = {
-            'clang-format', -- c
-            'biome', -- css, javascript, json, jsonc
-            'luacheck', -- lua
-            'mdformat', -- markdown
-            'shfmt', -- bash
-            'shellcheck', -- bash
-            'sqlfluff', -- sql
-            'stylua', -- lua
-            'superhtml', -- html
-            'taplo', -- toml, ini
+            'clang-format',
+            'luacheck',
+            'mdformat',
+            'shfmt',
+            'shellcheck',
+            'sqlfluff',
+            'stylua',
+            'superhtml',
+            'taplo',
             'tree-sitter-cli', -- required by nvim-treesitter
         }
     end

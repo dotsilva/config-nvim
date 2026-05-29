@@ -28,19 +28,22 @@ do
         end,
 
         formatters_by_ft = {
-            c = { 'clang-format' }, -- mason
-            css = { 'biome' }, -- mason
-            dosini = { 'taplo' }, -- mason
-            html = { 'superhtml' }, -- mason
-            javascript = { 'biome' }, -- mason
-            json = { 'biome' }, -- mason
-            jsonc = { 'biome' }, -- mason
-            lua = { 'stylua' }, -- mason -- system (termux)
-            markdown = { 'mdformat', 'injected' }, -- mason -- injected handle code blocks to their formatters
-            sh = { 'shfmt' }, -- mason
-            sql = { 'sqlfluff' }, -- mason
-            toml = { 'taplo' }, -- mason
-            zig = { 'zigfmt' }, -- system: zig
+            -- biome (pc:biome; termux:biome2)
+            -- stylua (termux:stylua)
+            -- zigfmt (pc-termux:zig)
+            c = { 'clang-format' },
+            css = { 'biome' },
+            dosini = { 'taplo' },
+            html = { 'superhtml' },
+            javascript = { 'biome' },
+            json = { 'biome' },
+            jsonc = { 'biome' },
+            lua = { 'stylua' },
+            markdown = { 'mdformat', 'injected' },
+            sh = { 'shfmt' },
+            sql = { 'sqlfluff' },
+            toml = { 'taplo' },
+            zig = { 'zigfmt' },
         },
 
         formatters = {

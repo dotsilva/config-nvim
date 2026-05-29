@@ -3,17 +3,20 @@ do
 
     local lint = require 'lint'
     lint.linters_by_ft = {
-        -- commented tools need configuration
-        c = { 'clangtidy' }, -- system: clang, which is called as clang-tidy in cli
-        css = { 'biomejs' }, -- mason: biome
-        html = { 'superhtml' }, -- mason
-        javascript = { 'biomejs' }, -- mason: biome
-        json = { 'biomejs' }, -- mason: biome
-        jsonc = { 'biomejs' }, -- mason: biome
-        lua = { 'luacheck' }, -- mason -- system (termux)
-        sh = { 'shellcheck' }, -- mason
-        sql = { 'sqlfluff' }, -- mason
-        zig = { 'zig' }, -- system
+        -- clangtidy (pc-termux:clang)
+        -- biomejs (pc:biome; termux:biome2)
+        -- luacheck (termux:luacheck)
+        -- zig (pc-termux:zig)
+        c = { 'clangtidy' },
+        css = { 'biomejs' },
+        html = { 'superhtml' },
+        javascript = { 'biomejs' },
+        json = { 'biomejs' },
+        jsonc = { 'biomejs' },
+        lua = { 'luacheck' },
+        sh = { 'shellcheck' },
+        sql = { 'sqlfluff' },
+        zig = { 'zig' },
     }
 
     local superhtml_pattern = '^([^:]+):(%d+):(%d+): (.+)$'
