@@ -18,13 +18,6 @@ do
             'taplo', -- toml, ini
             'tree-sitter-cli', -- required by nvim-treesitter
         }
-        vim.fn.jobstart({ 'pkg', 'install', 'luacheck', 'stylua' }, {
-            on_exit = function(_, code)
-                if code == 0 then
-                    vim.notify 'installed with pkg: luacheck, stylua'
-                end
-            end,
-        })
     else
         ensure_installed = {
             'clang-format', -- c
