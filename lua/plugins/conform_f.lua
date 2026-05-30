@@ -28,7 +28,7 @@ do
         end,
 
         formatters_by_ft = {
-            -- biome (pc:biome; termux:biome2)
+            -- biome (pc:biome, termux:biome2)
             -- stylua (termux:stylua)
             -- zigfmt (pc-termux:zig)
             c = { 'clang-format' },

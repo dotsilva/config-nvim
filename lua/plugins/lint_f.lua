@@ -4,7 +4,7 @@ do
     local lint = require 'lint'
     lint.linters_by_ft = {
         -- clangtidy (pc-termux:clang)
-        -- biomejs (pc:biome; termux:biome2)
+        -- biomejs (pc:biome, termux:biome2)
         -- luacheck (termux:luacheck)
         -- zig (pc-termux:zig)
         c = { 'clangtidy' },
