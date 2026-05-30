@@ -7,7 +7,7 @@ do
             show_hidden = true,
         },
 
-        -- preview Window (hit <C-p> inside oil to toggle it)
+        -- preview window (hit <C-p> inside oil to toggle it)
         preview_win = {
             update_on_cursor_moved = true,
         },
@@ -25,7 +25,6 @@ do
         vim.api.nvim_create_autocmd('VimEnter', {
             callback = function()
                 vim.schedule(function() require('oil').open() end)
-                -- vim.schedule(function() pcall(require('oil').open) end)
             end,
         })
     end
