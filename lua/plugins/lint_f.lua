@@ -48,6 +48,25 @@ do
         '--checks=*',
     }
 
+    --[[
+    -- to force posix
+    local function filename_or_stdin()
+        local bufname = vim.api.nvim_buf_get_name(0)
+        local file = vim.fn.fnameescape(vim.fn.fnamemodify(bufname, ':p'))
+        if vim.bo.buftype == '' and vim.fn.filereadable(file) == 1 then
+            return file
+        end
+        return '-'
+    end
+    lint.linters.shellcheck.args = {
+        '--shell',
+        'sh',
+        '--format',
+        'json1',
+        filename_or_stdin,
+    }
+    ]]
+
     lint.linters.sqlfluff.args = {
         'lint',
         '--format',
