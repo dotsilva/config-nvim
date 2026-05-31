@@ -236,13 +236,6 @@ hi('Todo', { fg = p.cyan, bold = true })
 -- ==========================================
 -- PHASE F: PLUGINS
 -- ==========================================
-hi('DashboardSeparator', { fg = p.black })
-hi('DashboardVerse', { fg = p.black, bold = true })
-hi('DashboardTitle', { fg = p.blue, bold = true })
-hi('DashboardPath', { fg = p.cyan })
-
-hi('FidgetTitle', { fg = p.blue, bg = p.ground, bold = true })
-hi('FidgetTask', { fg = p.black, bg = p.ground })
 
 -- Mini Diff
 hi('MiniDiffSignAdd', { fg = p.green, bg = p.ground, bold = true })
@@ -290,16 +283,6 @@ hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineLsp', { fg = p.magenta, bg = p.ground, bold = true })
 
--- Mini Clue (Strict Blue Borders)
-hi('MiniClueNormal', { fg = p.black, bg = p.ground })
-hi('MiniClueBorder', { fg = p.blue, bg = p.ground })
-hi('MiniClueTitle', { fg = p.blue, bold = true })
-hi('MiniClueNextKey', { fg = p.black })
-
--- Mini Indentscope
-hi('MiniIndentscopeSymbol', { fg = p.black })
-hi('MiniIndentscopeSymbolOff', { fg = p.ground })
-
 -- Blink CMP (Strict Blue Borders)
 hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
 hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.ground })
@@ -312,36 +295,6 @@ hi('BlinkCmpLabelMatch', { fg = p.magenta, bold = true })
 hi('BlinkCmpKind', { fg = p.black })
 hi('BlinkCmpDocBorder', { fg = p.blue, bg = p.ground })
 hi('BlinkCmpSignatureHelpBorder', { fg = p.blue, bg = p.ground })
-
--- ==========================================
--- Lazy.nvim
--- ==========================================
-hi('LazyNormal', { fg = p.black, bg = p.ground })
-hi('LazyH1', { fg = p.blue, bold = true })
-hi('LazyH2', { fg = p.blue, bold = true })
-hi('LazyButton', { fg = p.black, bg = p.ground })
-hi(
-    'LazyButtonActive',
-    { fg = p.cyan, bg = 'NONE', bold = true, underdotted = true, sp = p.cyan }
-)
-hi('LazyDir', { fg = p.cyan })
-hi('LazyUrl', { fg = p.cyan })
-hi('LazyCommit', { fg = p.cyan })
-hi('LazyProgressDone', { fg = p.green })
-hi('LazyProgressTodo', { fg = p.black })
-hi('LazyTaskError', { fg = p.red, bold = true })
-hi('LazyTaskOutput', { fg = p.white })
-hi('LazyDimmed', { fg = p.black, italic = true })
-hi('LazyProp', { fg = p.cyan })
-hi('LazyValue', { fg = p.white })
-hi('LazySpecial', { fg = p.magenta })
-hi('LazyReasonCmd', { fg = p.green })
-hi('LazyReasonEvent', { fg = p.yellow })
-hi('LazyReasonFt', { fg = p.blue })
-hi('LazyReasonKeys', { fg = p.white })
-hi('LazyReasonPlugin', { fg = p.blue })
-hi('LazyReasonSource', { fg = p.cyan })
-hi('LazyReasonStart', { fg = p.green })
 
 -- ==========================================
 -- Mason.nvim
