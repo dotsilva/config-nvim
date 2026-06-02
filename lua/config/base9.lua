@@ -5,8 +5,8 @@ vim.o.background = 'dark'
 
 -- color palette
 local p = {
-    ground = '#1E1E1E',
-    black = '#858585',
+    ground = '#1E1E1E', -- TODO: use 121212 instead
+    black = '#858585', -- and 808080 for this one
     red = '#F34E4E',
     green = '#36DB36',
     yellow = '#CFCF2A',
