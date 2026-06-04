@@ -22,9 +22,8 @@ do
         sources = {
             default = { 'path' },
         },
-        -- fuzzy = { implementation = 'lua' },
-        -- fuzzy = { implementation = 'prefer_rust_with_warning' },
-        fuzzy = { implementation = 'prefer_rust' },
+        fuzzy = { implementation = 'lua' },
+        -- fuzzy = { implementation = 'prefer_rust' },
         signature = { enabled = true },
     }
 end
