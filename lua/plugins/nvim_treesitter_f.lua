@@ -31,6 +31,7 @@ do
         'make',
         'markdown',
         'markdown_inline',
+        'properties',
         'regex',
         'sql',
         'ssh_config',
