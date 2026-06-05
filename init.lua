@@ -20,7 +20,7 @@ do
     require 'config.base9'
 
     require 'plugins.oil_f'
-    require 'plugins.fzf-lua_f'
+    require 'plugins.fzf_lua_f'
     require 'plugins.nvim_treesitter_f'
     require 'plugins.blink_cmp_f'
     require 'plugins.mason_f'
