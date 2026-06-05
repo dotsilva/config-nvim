@@ -2,6 +2,13 @@ vim.pack.add { 'https://github.com/ibhagwan/fzf-lua' }
 require('fzf-lua').setup {}
 
 -- TODO: set the keymaps for fzf-lua
+-- TODO: read this: https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
+-- TODO: try this convention instead
+-- vim.pack.add({ 'https://github.com/user/repo.git' })
+-- to be consitent with this one bellow, so its easier to remind
+-- vim.pack.del({ 'nvim-lspconfig', 'nvim-treesitter' })
+-- TODO: set helpers for common vim.pack usage, such as
+-- update and remove
 
 -- keeping this here for documentation to help me set either snacks.picker or fzf-lua
 --[[
