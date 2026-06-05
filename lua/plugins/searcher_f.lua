@@ -1,3 +1,10 @@
+vim.pack.add { 'https://github.com/folke/snacks.nvim' }
+require('snacks').setup{
+    picker = { enabled = true},
+}
+
+-- keeping this here for documentation to help me set either snacks.picker or fzf-lua
+--[[
 do
     vim.pack.add {
         { src = 'https://github.com/nvim-mini/mini.pick', version = 'stable' },
@@ -32,3 +39,4 @@ do
         { desc = 'Search Help' }
     )
 end
+]]
