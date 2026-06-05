@@ -1,7 +1,7 @@
-vim.pack.add { 'https://github.com/folke/snacks.nvim' }
-require('snacks').setup{
-    picker = { enabled = true},
-}
+vim.pack.add { 'https://github.com/ibhagwan/fzf-lua' }
+require('fzf-lua').setup {}
+
+-- TODO: set the keymaps for fzf-lua
 
 -- keeping this here for documentation to help me set either snacks.picker or fzf-lua
 --[[
