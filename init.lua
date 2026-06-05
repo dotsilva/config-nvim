@@ -11,7 +11,11 @@ do
     vim.g.mapleader = ' '
     vim.g.maplocalleader = ' '
 
-    -- config
+    -- TODO: read this: https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
+    -- TODO: set helpers for common vim.pack usage, such as
+    -- update and remove
+    -- NOTE: use this to remove plugins
+    -- vim.pack.del({ 'oil', 'nvim-treesitter' })
     require 'config.vim_pack'
     require 'config.options'
     require 'config.keymaps'
