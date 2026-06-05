@@ -22,7 +22,7 @@ do
     require 'plugins.oil_f'
     -- this is mini_pick dependency
     require 'plugins.mini_extra_f'
-    require 'plugins.mini_pick_f'
+    require 'plugins.searcher_f'
     require 'plugins.nvim_treesitter_f'
     require 'plugins.blink_cmp_f'
     require 'plugins.mason_f'
