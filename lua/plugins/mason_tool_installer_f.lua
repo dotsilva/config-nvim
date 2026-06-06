@@ -3,7 +3,6 @@ do
         'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
     }
     local ensure_installed
-    local is_termux = vim.loop.fs_stat '/data/data/com.termux'
     if is_termux then
         ensure_installed = {
             'mdformat',
