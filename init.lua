@@ -11,6 +11,12 @@ do
     vim.g.mapleader = ' '
     vim.g.maplocalleader = ' '
 
+    -- verify if the environment is termux
+    -- this can be used to set specific plugins
+    -- configs trough conditionals for termux
+    -- to avoid problems and errors
+    _G.is_termux = vim.loop.fs_stat '/data/data/com.termux'
+
     -- TODO: read this: https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
     -- TODO: set helpers for common vim.pack usage, such as
     -- update and remove
