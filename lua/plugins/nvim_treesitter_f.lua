@@ -32,6 +32,7 @@ do
         'markdown',
         'markdown_inline',
         'properties',
+        'readline',
         'regex',
         'sql',
         'ssh_config',
