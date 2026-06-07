@@ -14,6 +14,7 @@ do
         json = { 'biomejs' },
         jsonc = { 'biomejs' },
         lua = { 'luacheck' },
+        odin = { 'odin' },
         sh = { 'shellcheck' },
         sql = { 'sqlfluff' },
         zig = { 'zig' },

@@ -18,6 +18,7 @@ do
             'clang-format',
             'luacheck',
             'mdformat',
+            'ols',
             'shfmt',
             'shellcheck',
             'sqlfluff',

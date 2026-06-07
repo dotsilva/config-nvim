@@ -31,6 +31,7 @@ do
         'make',
         'markdown',
         'markdown_inline',
+        'odin',
         'properties',
         'readline',
         'regex',
