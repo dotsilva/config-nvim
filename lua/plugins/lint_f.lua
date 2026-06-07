@@ -3,9 +3,10 @@ do
 
     local lint = require 'lint'
     lint.linters_by_ft = {
-        -- clangtidy (pc-termux:clang)
-        -- biomejs (pc:biome, termux:biome2)
-        -- luacheck (termux:luacheck)
+        -- module - source:platform= package_name
+        -- clangtidy - pacman:pc= clang, pkg:termux= clang
+        -- biomejs - pacman:pc= biome, pkg:termux= biome2
+        -- luacheck - luarocks:termux= luacheck
         c = { 'clangtidy' },
         css = { 'biomejs' },
         html = { 'superhtml' },

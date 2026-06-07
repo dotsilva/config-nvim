@@ -28,8 +28,10 @@ do
         end,
 
         formatters_by_ft = {
-            -- biome (pc:biome, termux:biome2)
-            -- stylua (termux:stylua)
+            -- module - source:platform= package_name
+            -- biome - pacman:pc= biome, pkg:termux = biome2
+            -- stylua - luarocks:termux= stylua
+            -- odinfmt - mason:= ols
             c = { 'clang-format' },
             css = { 'biome' },
             dosini = { 'taplo' },
@@ -38,7 +40,7 @@ do
             json = { 'biome' },
             jsonc = { 'biome' },
             lua = { 'stylua' },
-            markdown = { 'mdformat', 'injected' },
+            markdown = { 'mdformat', 'injected' }, -- injected handles code blocks to their own formatters
             odin = { 'odinfmt' },
             sh = { 'shfmt' },
             sql = { 'sqlfluff' },
