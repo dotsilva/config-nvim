@@ -40,7 +40,6 @@ do
         'toml',
         'vim',
         'vimdoc',
-        'zig',
     }
 
     require('nvim-treesitter').install(parsers)
