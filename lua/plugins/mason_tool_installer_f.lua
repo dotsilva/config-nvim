@@ -6,6 +6,7 @@ do
     if is_termux then
         ensure_installed = {
             'mdformat',
+            -- 'ols', -- it should work in future
             'shfmt',
             'shellcheck',
             'sqlfluff',

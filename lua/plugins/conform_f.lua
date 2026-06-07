@@ -18,7 +18,6 @@ do
                 sh = true,
                 sql = true,
                 toml = true,
-                zig = true,
             }
 
             if enabled_filetypes[vim.bo[bufnr].filetype] then
@@ -31,7 +30,6 @@ do
         formatters_by_ft = {
             -- biome (pc:biome, termux:biome2)
             -- stylua (termux:stylua)
-            -- zigfmt (pc-termux:zig)
             c = { 'clang-format' },
             css = { 'biome' },
             dosini = { 'taplo' },
@@ -45,7 +43,6 @@ do
             sh = { 'shfmt' },
             sql = { 'sqlfluff' },
             toml = { 'taplo' },
-            zig = { 'zigfmt' },
         },
 
         formatters = {

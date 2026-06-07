@@ -6,7 +6,6 @@ do
         -- clangtidy (pc-termux:clang)
         -- biomejs (pc:biome, termux:biome2)
         -- luacheck (termux:luacheck)
-        -- zig (pc-termux:zig)
         c = { 'clangtidy' },
         css = { 'biomejs' },
         html = { 'superhtml' },
@@ -14,10 +13,9 @@ do
         json = { 'biomejs' },
         jsonc = { 'biomejs' },
         lua = { 'luacheck' },
-        odin = { 'odin' },
+        odin = { 'odin' }, -- TODO: make it work
         sh = { 'shellcheck' },
         sql = { 'sqlfluff' },
-        zig = { 'zig' },
     }
 
     local superhtml_pattern = '^([^:]+):(%d+):(%d+): (.+)$'
