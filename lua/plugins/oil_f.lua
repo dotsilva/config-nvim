@@ -2,14 +2,8 @@ do
 	vim.pack.add { 'https://github.com/stevearc/oil.nvim' }
 	require('oil').setup {
 		default_file_explorer = true,
-		columns = {},
 		view_options = {
 			show_hidden = true,
-		},
-
-		-- preview window (hit <C-p> inside oil to toggle it)
-		preview_win = {
-			update_on_cursor_moved = true,
 		},
 	}
 
