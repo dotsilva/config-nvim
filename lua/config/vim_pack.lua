@@ -1,26 +1,26 @@
 do
-    -- [[ intro to `vim.pack` ]]
-    -- `vim.pack` is a new plugin manager built into neovim,
-    --  which provides a Lua interface for installing and managing plugins.
-    --
-    --  see `:help vim.pack`, `:help vim.pack-examples` or the
-    --  excellent blog post from the creator of vim.pack and mini.nvim:
-    --  https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
-    --
-    --  to inspect plugin state and pending updates, run
-    --    :lua vim.pack.update(nil, { offline = true })
-    --
-    --  to update plugins, run
-    --    :lua vim.pack.update()
-    --
-    --
-    --  throughout the rest of the config there will be examples
-    --  of how to install and configure plugins using `vim.pack`.
-    --
-    --  in this section we set up some autocommands to run build
-    --  steps for certain plugins after they are installed or updated.
+	-- [[ intro to `vim.pack` ]]
+	-- `vim.pack` is a new plugin manager built into neovim,
+	--  which provides a Lua interface for installing and managing plugins.
+	--
+	--  see `:help vim.pack`, `:help vim.pack-examples` or the
+	--  excellent blog post from the creator of vim.pack and mini.nvim:
+	--  https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
+	--
+	--  to inspect plugin state and pending updates, run
+	--    :lua vim.pack.update(nil, { offline = true })
+	--
+	--  to update plugins, run
+	--    :lua vim.pack.update()
+	--
+	--
+	--  throughout the rest of the config there will be examples
+	--  of how to install and configure plugins using `vim.pack`.
+	--
+	--  in this section we set up some autocommands to run build
+	--  steps for certain plugins after they are installed or updated.
 
-    --[[
+	--[[
     local function run_build(name, cmd, cwd)
         local result = vim.system(cmd, { cwd = cwd }):wait()
         if result.code ~= 0 then
@@ -36,17 +36,17 @@ do
     end
     ]]
 
-    -- this autocommand runs after a plugin is installed or updated and
-    -- runs the appropriate build command for that plugin if necessary.
+	-- this autocommand runs after a plugin is installed or updated and
+	-- runs the appropriate build command for that plugin if necessary.
 
-    -- See `:help vim.pack-events`
-    vim.api.nvim_create_autocmd('PackChanged', {
-        callback = function(ev)
-            local name = ev.data.spec.name
-            local kind = ev.data.kind
-            if kind ~= 'install' and kind ~= 'update' then return end
+	-- See `:help vim.pack-events`
+	vim.api.nvim_create_autocmd('PackChanged', {
+		callback = function(ev)
+			local name = ev.data.spec.name
+			local kind = ev.data.kind
+			if kind ~= 'install' and kind ~= 'update' then return end
 
-            --[[
+			--[[
             if
                 name == 'telescope-fzf-native.nvim'
                 and vim.fn.executable 'make' == 1
@@ -70,11 +70,11 @@ do
             end
             ]]
 
-            if name == 'nvim-treesitter' then
-                if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
-                vim.cmd 'TSUpdate'
-                return
-            end
-        end,
-    })
+			if name == 'nvim-treesitter' then
+				if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
+				vim.cmd 'TSUpdate'
+				return
+			end
+		end,
+	})
 end

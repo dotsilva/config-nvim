@@ -36,17 +36,17 @@ vim.o.confirm = true
 
 vim.opt.tabstop = 4 -- number of spaces a <Tab> counts for
 vim.opt.shiftwidth = 4 -- size of an indent operation (>> or <<)
-vim.opt.expandtab = true -- convert tabs to spaces automatically
+vim.opt.expandtab = false -- convert tabs to spaces automatically
 vim.opt.softtabstop = 4 -- treat 4 spaces as a tab when deleting/backspacing
 
 -- diagnostic config
 vim.diagnostic.config {
-    update_in_insert = false,
-    severity_sort = true,
-    float = { border = 'double', source = 'if_many' },
-    underline = { severity = { min = vim.diagnostic.severity.WARN } },
-    virtual_text = true,
-    virtual_lines = false,
-    -- replace: jump = { float = true }
-    jump = { on_jump = function() vim.diagnostic.open_float() end },
+	update_in_insert = false,
+	severity_sort = true,
+	float = { border = 'double', source = 'if_many' },
+	underline = { severity = { min = vim.diagnostic.severity.WARN } },
+	virtual_text = true,
+	virtual_lines = false,
+	-- replace: jump = { float = true }
+	jump = { on_jump = function() vim.diagnostic.open_float() end },
 }

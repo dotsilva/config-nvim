@@ -1,7 +1,5 @@
---[[
 vim.filetype.add {
-    extension = {
-        theme = 'dosini',
-    },
+	extension = {
+		theme = 'dosini',
+	},
 }
-]]

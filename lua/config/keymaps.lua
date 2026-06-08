@@ -3,42 +3,42 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- diagnostic config & keymaps
 vim.keymap.set(
-    'n',
-    '<leader>q',
-    vim.diagnostic.setloclist,
-    { desc = 'Open diagnostic [Q]uickfix list' }
+	'n',
+	'<leader>q',
+	vim.diagnostic.setloclist,
+	{ desc = 'Open diagnostic [Q]uickfix list' }
 )
 
 -- exit terminal mode in the builtin terminal
 vim.keymap.set(
-    't',
-    '<Esc><Esc>',
-    '<C-\\><C-n>',
-    { desc = 'Exit terminal mode' }
+	't',
+	'<Esc><Esc>',
+	'<C-\\><C-n>',
+	{ desc = 'Exit terminal mode' }
 )
 
 -- keybinds to make split navigation easier
 vim.keymap.set(
-    'n',
-    '<C-h>',
-    '<C-w><C-h>',
-    { desc = 'Move focus to the left window' }
+	'n',
+	'<C-h>',
+	'<C-w><C-h>',
+	{ desc = 'Move focus to the left window' }
 )
 vim.keymap.set(
-    'n',
-    '<C-l>',
-    '<C-w><C-l>',
-    { desc = 'Move focus to the right window' }
+	'n',
+	'<C-l>',
+	'<C-w><C-l>',
+	{ desc = 'Move focus to the right window' }
 )
 vim.keymap.set(
-    'n',
-    '<C-j>',
-    '<C-w><C-j>',
-    { desc = 'Move focus to the lower window' }
+	'n',
+	'<C-j>',
+	'<C-w><C-j>',
+	{ desc = 'Move focus to the lower window' }
 )
 vim.keymap.set(
-    'n',
-    '<C-k>',
-    '<C-w><C-k>',
-    { desc = 'Move focus to the upper window' }
+	'n',
+	'<C-k>',
+	'<C-w><C-k>',
+	{ desc = 'Move focus to the upper window' }
 )
