@@ -1,6 +1,6 @@
 vim.cmd 'hi clear'
 if vim.fn.exists 'syntax_on' then vim.cmd 'syntax reset' end
-vim.g.colors_name = 'base9'
+vim.g.colors_name = 'zzterm'
 vim.o.background = 'dark'
 
 -- color palette
@@ -246,13 +246,6 @@ hi('MiniDiffSignDelete', { fg = p.red, bg = p.ground, bold = true })
 hi('OilNormal', { fg = p.black, bg = p.ground })
 hi('OilBorder', { fg = p.blue })
 hi('OilTitle', { fg = p.blue, bg = p.ground, bold = true })
-
--- Mini Pick (Strict Blue Borders)
-hi('MiniPickNormal', { fg = p.black, bg = p.ground })
-hi('MiniPickBorder', { fg = p.blue })
-hi('MiniPickPrompt', { fg = p.black, bg = p.ground })
-hi('MiniPickMatchCurrent', { bg = 'NONE', underdotted = true, sp = p.cyan })
-hi('MiniPickMatchRanges', { fg = p.cyan, bold = true })
 
 -- Mini Statusline
 hi(
