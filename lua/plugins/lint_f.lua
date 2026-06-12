@@ -13,7 +13,7 @@ lint.linters_by_ft = {
 	json = { 'biomejs' },
 	jsonc = { 'biomejs' },
 	lua = { 'luacheck' },
-	odin = { 'odin' }, -- TODO: make it work
+	-- odin = { 'odin' }, -- TODO: make it work
 	sh = { 'shellcheck' },
 	sql = { 'sqlfluff' },
 }
