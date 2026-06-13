@@ -1,9 +1,4 @@
-vim.pack.add {
-	{
-		src = 'https://github.com/nvim-mini/mini.statusline',
-		version = 'stable',
-	},
-}
+vim.pack.add { 'https://github.com/nvim-mini/mini.statusline' }
 local statusline = require 'mini.statusline'
 
 local function custom_diff()
