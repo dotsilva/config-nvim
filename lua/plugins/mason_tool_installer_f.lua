@@ -7,7 +7,6 @@ if is_termux then
 		'mdformat',
 		-- 'ols', -- it should work in future
 		'shfmt',
-		'shellcheck',
 		'sqlfluff',
 		'superhtml',
 		'taplo',
