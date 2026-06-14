@@ -13,9 +13,36 @@ lint.linters_by_ft = {
 	json = { 'biomejs' },
 	jsonc = { 'biomejs' },
 	lua = { 'luacheck' },
-	-- odin = { 'odin' }, -- TODO: make it work
+	odin = { 'odin' },
 	sh = { 'shellcheck' },
 	sql = { 'sqlfluff' },
+}
+
+-- /path/path/path/file.odin(25:7) Error: Undeclared name: cuscuz
+local function get_file_name() return vim.api.nvim_buf_get_name(0) end
+local odin_pattern = '^([^%(]+)%((%d+):(%d+)%) (%a[^%:]+):(.+)$'
+local odin_groups = { 'file', 'lnum', 'col', 'severity', 'message' }
+local odin_severity_map = {
+	['error'] = vim.diagnostic.severity.ERROR,
+}
+lint.linters.odin = {
+	cmd = 'odin',
+	args = {
+		'check',
+		get_file_name,
+		'-file',
+	},
+	stdin = true,
+	stream = 'stderr',
+	ignore_exitcode = true,
+	parser = require('lint.parser').from_pattern(
+		odin_pattern,
+		odin_groups,
+		odin_severity_map,
+		{
+			source = 'odin',
+		}
+	),
 }
 
 local superhtml_pattern = '^([^:]+):(%d+):(%d+): (.+)$'
