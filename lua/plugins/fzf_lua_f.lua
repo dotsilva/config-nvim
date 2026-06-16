@@ -39,11 +39,11 @@ vim.keymap.set(
 	'n',
 	'<leader>fc',
 	function() require('fzf-lua').commands() end,
-	{ desc = 'history' }
+	{ desc = 'commands' }
 )
 vim.keymap.set(
 	'n',
 	'<leader>fu',
 	function() require('fzf-lua').undotree() end,
-	{ desc = 'history' }
+	{ desc = 'undotree' }
 )
