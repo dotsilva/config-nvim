@@ -144,11 +144,6 @@ hi(
 	{ fg = p.black, bg = p.ground, bold = true, italic = true }
 )
 
--- Lsp References
-hi('LspReferenceText', { bold = true, underdouble = true, sp = p.magenta })
-hi('LspReferenceRead', { bold = true, underdouble = true, sp = p.magenta })
-hi('LspReferenceWrite', { bold = true, underdashed = true, sp = p.magenta })
-
 -- Diagnostics
 hi('DiagnosticUnderlineError', { sp = p.red, undercurl = true })
 hi('DiagnosticUnderlineWarn', { sp = p.yellow, undercurl = true })
@@ -274,7 +269,6 @@ hi(
 )
 hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
-hi('MiniStatuslineLsp', { fg = p.magenta, bg = p.ground, bold = true })
 
 -- Blink CMP (Strict Blue Borders)
 hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
