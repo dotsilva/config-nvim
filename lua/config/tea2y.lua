@@ -1,19 +1,19 @@
 vim.cmd 'hi clear'
 if vim.fn.exists 'syntax_on' then vim.cmd 'syntax reset' end
-vim.g.colors_name = 'zzterm'
+vim.g.colors_name = 'tea2y'
 vim.o.background = 'dark'
 
 -- color palette
 local p = {
-	ground = '#1E1E1E', -- TODO: use 121212 instead
-	black = '#858585', -- and 808080 for this one
+	ground = '#1E1E0F',
+	black = '#858577',
 	red = '#FF4949',
 	green = '#36DB36',
 	yellow = '#CFCF2A',
 	blue = '#7E7EFF',
 	magenta = '#E742E7',
 	cyan = '#38D5D5',
-	white = '#D4D4D4',
+	white = '#D4D4B4',
 }
 
 local function hi(group, opts) vim.api.nvim_set_hl(0, group, opts) end
@@ -237,7 +237,7 @@ hi('MiniDiffSignAdd', { fg = p.green, bg = p.ground, bold = true })
 hi('MiniDiffSignChange', { fg = p.yellow, bg = p.ground, bold = true })
 hi('MiniDiffSignDelete', { fg = p.red, bg = p.ground, bold = true })
 
--- Oil File Explorer (Strict Blue Borders)
+-- Oil File Explorer
 hi('OilNormal', { fg = p.black, bg = p.ground })
 hi('OilBorder', { fg = p.blue })
 hi('OilTitle', { fg = p.blue, bg = p.ground, bold = true })
@@ -270,7 +270,7 @@ hi(
 hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
 hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
 
--- Blink CMP (Strict Blue Borders)
+-- Blink CMP
 hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
 hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.ground })
 hi(
@@ -287,10 +287,10 @@ hi('BlinkCmpSignatureHelpBorder', { fg = p.blue, bg = p.ground })
 -- Mason.nvim
 -- ==========================================
 hi('MasonNormal', { fg = p.black, bg = p.ground })
-hi('MasonHeader', { fg = p.blue, bold = true }) -- Blue titles
+hi('MasonHeader', { fg = p.blue, bold = true })
 hi('MasonHeaderSecondary', { fg = p.blue, bold = true })
 hi('MasonHeading', { fg = p.blue, bold = true })
-hi('MasonHighlight', { fg = p.cyan }) -- Focus
+hi('MasonHighlight', { fg = p.cyan })
 hi('MasonHighlightBlock', { fg = p.ground, bg = p.cyan })
 hi('MasonHighlightBlockBold', { fg = p.ground, bg = p.cyan, bold = true })
 hi('MasonHighlightSecondary', { fg = p.yellow })
@@ -303,5 +303,5 @@ hi('MasonLink', { fg = p.cyan })
 hi('MasonMuted', { fg = p.black, italic = true })
 hi('MasonMutedBlock', { fg = p.black, bg = p.ground })
 hi('MasonMutedBlockBold', { fg = p.black, bg = p.ground, bold = true })
-hi('MasonError', { fg = p.red, bold = true }) -- Stop
-hi('MasonWarning', { fg = p.yellow, bold = true }) -- Route/Warn
+hi('MasonError', { fg = p.red, bold = true })
+hi('MasonWarning', { fg = p.yellow, bold = true })

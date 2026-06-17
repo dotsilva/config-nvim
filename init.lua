@@ -26,7 +26,7 @@ require 'config.options'
 require 'config.keymaps'
 require 'config.autocmds'
 require 'config.health'
-require 'config.zzterm'
+require 'config.tea2y'
 
 require 'plugins.oil_f'
 require 'plugins.fzf_lua_f'
