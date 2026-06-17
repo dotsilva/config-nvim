@@ -10,5 +10,5 @@ vim.keymap.set(
 	'n',
 	'<leader>gd',
 	function() require('mini.diff').toggle_overlay() end,
-	{ desc = 'Toggle git diff overlay' }
+	{ desc = 'Diff overlay' }
 )
