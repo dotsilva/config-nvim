@@ -13,6 +13,7 @@ local parsers = {
 	'html',
 	'html_tags',
 	'hyprlang',
+	'jq',
 	'json',
 	'lua',
 	'luadoc',
