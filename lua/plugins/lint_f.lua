@@ -9,7 +9,6 @@ lint.linters_by_ft = {
 	c = { 'clangtidy' },
 	css = { 'biomejs' },
 	html = { 'superhtml' },
-	javascript = { 'biomejs' },
 	json = { 'biomejs' },
 	jsonc = { 'biomejs' },
 	lua = { 'luacheck' },
