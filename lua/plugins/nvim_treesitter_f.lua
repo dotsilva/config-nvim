@@ -14,6 +14,7 @@ local parsers = {
 	'html',
 	'html_tags',
 	'hyprlang',
+	'ini',
 	'jq',
 	'json',
 	'lua',
