@@ -10,6 +10,7 @@ local parsers = {
 	'bash',
 	'c',
 	'css',
+	'diff',
 	'html',
 	'html_tags',
 	'hyprlang',
