@@ -4,10 +4,12 @@ vim.g.colors_name = 'tea2y'
 vim.o.background = 'dark'
 
 -- color palette
-local p = {
+local t = {
+	-- ground, black and white have a
+	-- subtle yellowto to reduce blue
 	ground = '#1E1E0F',
 	black = '#858577',
-	red = '#FF4949',
+	red = '#FF5050',
 	green = '#36DB36',
 	yellow = '#CFCF2A',
 	blue = '#7E7EFF',
@@ -16,292 +18,285 @@ local p = {
 	white = '#D4D4B4',
 }
 
+-- to easy turn on/off these options
+-- for all cases
+local bold_switch = true
+local italic_switch = true
+local udotted_switch = true
+local ucurl_switch = true
+-- local udouble_switch = true
+-- local uline_switch = true
+
 local function hi(group, opts) vim.api.nvim_set_hl(0, group, opts) end
 
--- ==========================================
--- PHASE A: TERMINAL VARIABLES
--- ==========================================
-vim.g.terminal_color_0 = p.black
-vim.g.terminal_color_1 = p.red
-vim.g.terminal_color_2 = p.green
-vim.g.terminal_color_3 = p.yellow
-vim.g.terminal_color_4 = p.blue
-vim.g.terminal_color_5 = p.magenta
-vim.g.terminal_color_6 = p.cyan
-vim.g.terminal_color_7 = p.white
-vim.g.terminal_color_8 = p.black
-vim.g.terminal_color_9 = p.red
-vim.g.terminal_color_10 = p.green
-vim.g.terminal_color_11 = p.yellow
-vim.g.terminal_color_12 = p.blue
-vim.g.terminal_color_13 = p.magenta
-vim.g.terminal_color_14 = p.cyan
-vim.g.terminal_color_15 = p.white
+-- terminal variables
+vim.g.terminal_color_0 = t.black
+vim.g.terminal_color_1 = t.red
+vim.g.terminal_color_2 = t.green
+vim.g.terminal_color_3 = t.yellow
+vim.g.terminal_color_4 = t.blue
+vim.g.terminal_color_5 = t.magenta
+vim.g.terminal_color_6 = t.cyan
+vim.g.terminal_color_7 = t.white
+vim.g.terminal_color_8 = t.black
+vim.g.terminal_color_9 = t.red
+vim.g.terminal_color_10 = t.green
+vim.g.terminal_color_11 = t.yellow
+vim.g.terminal_color_12 = t.blue
+vim.g.terminal_color_13 = t.magenta
+vim.g.terminal_color_14 = t.cyan
+vim.g.terminal_color_15 = t.white
 
--- ==========================================
--- PHASE B: UI BACKGROUNDS & BORDERS
--- ==========================================
--- Base Text & Backgrounds
-hi('Normal', { fg = p.white, bg = p.ground })
-hi('NormalFloat', { fg = p.black, bg = p.ground })
-hi('NormalNC', { fg = p.black, bg = p.ground })
-hi('ColorColumn', { bg = p.ground })
-hi('CursorColumn', { bg = p.ground })
-hi(
-	'CursorLine',
-	{ bg = 'NONE', bold = true, underdotted = true, sp = p.magenta }
-)
-hi('CursorLineNr', {
-	fg = p.magenta,
-	bg = p.ground,
-	bold = true,
-	italic = true,
-	underdotted = true,
-	sp = p.magenta,
+-- base ui
+-- pattern to follow: fg, bg, bold, italic, underlines
+hi('Normal', { fg = t.white, bg = t.ground })
+hi('NormalFloat', { fg = t.black, bg = t.ground })
+hi('NormalNC', { fg = t.black, bg = t.ground })
+hi('ColorColumn', { bg = t.ground })
+hi('CursorColumn', { bg = t.ground })
+hi('CursorLine', {
+	bg = 'NONE',
+	bold = bold_switch,
+	underdotted = udotted_switch,
+	sp = t.magenta,
 })
-hi('LineNr', { fg = p.black, bg = p.ground, italic = true })
-hi('SignColumn', { fg = p.black, bg = p.ground })
-hi('FoldColumn', { fg = p.black, bg = p.ground })
-hi('VertSplit', { fg = p.ground, bg = p.ground })
-hi('WinSeparator', { fg = p.ground, bg = p.ground })
-hi('EndOfBuffer', { fg = p.ground, bg = p.ground })
-hi('Pmenu', { fg = p.black, bg = p.ground })
-hi('PmenuSel', { fg = p.ground, bg = p.cyan, bold = true })
-hi('PmenuSbar', { bg = p.ground })
-hi('PmenuThumb', { bg = p.black })
-hi('StatusLine', { fg = p.black, bg = p.ground, bold = true })
-hi('StatusLineNC', { fg = p.black, bg = p.ground })
-hi('TabLine', { fg = p.black, bg = p.ground })
-hi('TabLineFill', { fg = p.black, bg = p.ground })
-hi('TabLineSel', { fg = p.black, bg = p.ground, bold = true })
-hi('Title', { fg = p.blue, bold = true })
-hi('Visual', { bg = p.cyan, fg = p.ground })
-hi('Search', { fg = p.ground, bg = p.magenta })
-hi('IncSearch', { fg = p.ground, bg = p.magenta })
-hi('MatchParen', { fg = p.ground, bg = p.black, bold = true })
-hi('Directory', { fg = p.black, bold = true })
-hi('MsgArea', { fg = p.black, bg = p.ground })
+hi('CursorLineNr', {
+	fg = t.magenta,
+	bg = t.ground,
+	bold = bold_switch,
 
--- Confirmations, Warnings, and Prompts
-hi('Question', { fg = p.yellow, bold = true })
-hi('WarningMsg', { fg = p.yellow, bold = true })
-hi('MoreMsg', { fg = p.yellow, bold = true })
-hi('ErrorMsg', { fg = p.red, bold = true, bg = p.ground })
+	underdotted = udotted_switch,
+	sp = t.magenta,
+})
+hi('LineNr', { fg = t.black, bg = t.ground })
+hi('SignColumn', { fg = t.black, bg = t.ground })
+hi('FoldColumn', { fg = t.black, bg = t.ground })
+hi('VertSplit', { fg = t.ground, bg = t.ground })
+hi('WinSeparator', { fg = t.ground, bg = t.ground })
+hi('EndOfBuffer', { fg = t.ground, bg = t.ground })
+hi('Pmenu', { fg = t.black, bg = t.ground })
+hi('PmenuSel', { fg = t.ground, bg = t.cyan, bold = bold_switch })
+hi('PmenuSbar', { bg = t.ground })
+hi('PmenuThumb', { bg = t.black })
+hi('StatusLine', { fg = t.black, bg = t.ground, bold = bold_switch })
+hi('StatusLineNC', { fg = t.black, bg = t.ground })
+hi('TabLine', { fg = t.black, bg = t.ground })
+hi('TabLineFill', { fg = t.black, bg = t.ground })
+hi('TabLineSel', { fg = t.black, bg = t.ground, bold = bold_switch })
+hi('Title', { fg = t.blue, bold = bold_switch })
+hi('Visual', { bg = t.cyan, fg = t.ground })
+hi('Search', { fg = t.ground, bg = t.magenta })
+hi('IncSearch', { fg = t.ground, bg = t.magenta })
+hi('MatchParen', { fg = t.ground, bg = t.black, bold = bold_switch })
+hi('Directory', { fg = t.black, bold = bold_switch })
+hi('MsgArea', { fg = t.black, bg = t.ground })
 
--- Strict Blue Borders
-hi('FloatBorder', { fg = p.blue, bg = p.ground, bold = true })
-hi('FloatTitle', { fg = p.blue, bg = p.ground, bold = true })
+-- confirmations, warnings, and prompts
+hi('Question', { fg = t.yellow, bold = bold_switch })
+hi('WarningMsg', { fg = t.yellow, bold = bold_switch })
+hi('MoreMsg', { fg = t.yellow, bold = bold_switch })
+hi('ErrorMsg', { fg = t.red, bold = bold_switch, bg = t.ground })
 
--- ==========================================
--- PHASE C: DIAGNOSTICS & VCS
--- ==========================================
--- Diagnostics Text
-hi('DiagnosticError', { fg = p.red, bg = p.ground, bold = true, italic = true })
-hi(
-	'DiagnosticWarn',
-	{ fg = p.yellow, bg = p.ground, bold = true, italic = true }
-)
-hi(
-	'DiagnosticInfo',
-	{ fg = p.black, bg = p.ground, bold = true, italic = true }
-)
-hi(
-	'DiagnosticHint',
-	{ fg = p.black, bg = p.ground, bold = true, italic = true }
-)
+-- blue borders
+hi('FloatBorder', { fg = t.blue, bg = t.ground, bold = bold_switch })
+hi('FloatTitle', { fg = t.blue, bg = t.ground, bold = bold_switch })
+
+-- diagnostics
+hi('DiagnosticError', { fg = t.red, bg = t.ground, bold = bold_switch })
+hi('DiagnosticWarn', { fg = t.yellow, bg = t.ground, bold = bold_switch })
+hi('DiagnosticInfo', { fg = t.black, bg = t.ground, bold = bold_switch })
+hi('DiagnosticHint', { fg = t.black, bg = t.ground, bold = bold_switch })
 
 hi(
 	'DiagnosticUnderlineError',
-	{ sp = p.red, undercurl = true, bold = true, italic = true }
+	{ sp = t.red, undercurl = ucurl_switch, bold = bold_switch }
 )
 hi(
 	'DiagnosticUnderlineWarn',
-	{ sp = p.yellow, undercurl = true, bold = true, italic = true }
+	{ sp = t.yellow, undercurl = ucurl_switch, bold = bold_switch }
 )
-hi(
-	'DiagnosticUnderlineInfo',
-	{ sp = p.magenta, undercurl = true, bold = true, italic = true }
-)
-hi(
-	'DiagnosticUnderlineHint',
-	{ sp = p.magenta, undercurl = true, bold = true, italic = true }
-)
-
+hi('DiagnosticUnderlineInfo', {
+	sp = t.magenta,
+	undercurl = ucurl_switch,
+	bold = bold_switch,
+})
+hi('DiagnosticUnderlineHint', {
+	sp = t.magenta,
+	undercurl = ucurl_switch,
+	bold = bold_switch,
+})
 hi(
 	'DiagnosticVirtualTextError',
-	{ fg = p.red, bg = p.ground, bold = true, italic = true }
+	{ fg = t.red, bg = t.ground, bold = bold_switch }
 )
 hi(
 	'DiagnosticVirtualTextWarn',
-	{ fg = p.yellow, bg = p.ground, bold = true, italic = true }
+	{ fg = t.yellow, bg = t.ground, bold = bold_switch }
 )
 hi(
 	'DiagnosticVirtualTextInfo',
-	{ fg = p.black, bg = p.ground, bold = true, italic = true }
+	{ fg = t.black, bg = t.ground, bold = bold_switch }
 )
 hi(
 	'DiagnosticVirtualTextHint',
-	{ fg = p.black, bg = p.ground, bold = true, italic = true }
+	{ fg = t.black, bg = t.ground, bold = bold_switch }
 )
-
--- Diagnostics
-hi('DiagnosticUnderlineError', { sp = p.red, undercurl = true })
-hi('DiagnosticUnderlineWarn', { sp = p.yellow, undercurl = true })
-hi('DiagnosticUnderlineInfo', { sp = p.black, undercurl = true })
-hi('DiagnosticUnderlineHint', { sp = p.black, undercurl = true })
-hi('DiagnosticUnnecessary', { sp = p.black, undercurl = true })
+hi('DiagnosticUnderlineError', { sp = t.red, undercurl = ucurl_switch })
+hi('DiagnosticUnderlineWarn', { sp = t.yellow, undercurl = ucurl_switch })
+hi('DiagnosticUnderlineInfo', { sp = t.black, undercurl = ucurl_switch })
+hi('DiagnosticUnderlineHint', { sp = t.black, undercurl = ucurl_switch })
+hi('DiagnosticUnnecessary', { sp = t.black, undercurl = ucurl_switch })
 
 -- Diff States
-hi('DiffAdd', { fg = p.green, bg = p.ground, bold = true, italic = true })
-hi('DiffChange', { fg = p.yellow, bg = p.ground, bold = true, italic = true })
-hi('DiffDelete', { fg = p.red, bg = p.ground, bold = true, italic = true })
-hi('DiffText', { fg = p.ground, bg = p.yellow, bold = true, italic = true })
+hi('DiffAdd', { fg = t.green, bg = t.ground, bold = bold_switch })
+hi('DiffChange', { fg = t.yellow, bg = t.ground, bold = bold_switch })
+hi('DiffDelete', { fg = t.red, bg = t.ground, bold = bold_switch })
+hi('DiffText', { fg = t.ground, bg = t.yellow, bold = bold_switch })
 
--- ==========================================
--- PHASE D: TREESITTER
--- ==========================================
+-- treesitter
 -- green - working
-hi('@function.call', { fg = p.green })
-hi('@method.call', { fg = p.green })
-hi('@operator', { fg = p.green })
+hi('@function.call', { fg = t.green })
+hi('@method.call', { fg = t.green })
+hi('@operator', { fg = t.green })
 
 -- cyan referencing
-hi('@variable', { fg = p.cyan })
-hi('@variable.parameter', { fg = p.cyan })
-hi('@variable.member', { fg = p.cyan })
-hi('@property', { fg = p.cyan })
-hi('@module', { fg = p.cyan })
+hi('@variable', { fg = t.cyan })
+hi('@variable.parameter', { fg = t.cyan })
+hi('@variable.member', { fg = t.cyan })
+hi('@property', { fg = t.cyan })
+hi('@module', { fg = t.cyan })
 
 -- blue - defining
-hi('@function', { fg = p.blue })
-hi('@method', { fg = p.blue })
-hi('@type', { fg = p.blue })
-hi('@type.builtin', { fg = p.blue })
-hi('@keyword.function', { fg = p.blue })
-hi('@punctuation.bracket', { fg = p.blue })
-hi('@punctuation.delimiter', { fg = p.blue })
+hi('@function', { fg = t.blue })
+hi('@method', { fg = t.blue })
+hi('@type', { fg = t.blue })
+hi('@type.builtin', { fg = t.blue })
+hi('@keyword.function', { fg = t.blue })
+hi('@punctuation.bracket', { fg = t.blue })
+hi('@punctuation.delimiter', { fg = t.blue })
 
 -- yellow - routing
-hi('@keyword.conditional', { fg = p.yellow })
-hi('@keyword.repeat', { fg = p.yellow })
-hi('@keyword.exception', { fg = p.yellow })
-hi('@keyword.directive', { fg = p.yellow })
-hi('@keyword.return', { fg = p.yellow })
+hi('@keyword.conditional', { fg = t.yellow })
+hi('@keyword.repeat', { fg = t.yellow })
+hi('@keyword.exception', { fg = t.yellow })
+hi('@keyword.directive', { fg = t.yellow })
+hi('@keyword.return', { fg = t.yellow })
 
 -- magenta - signaling
-hi('@constant.builtin', { fg = p.magenta })
-hi('@character.special', { fg = p.magenta })
-hi('@string.escape', { fg = p.magenta })
-hi('@boolean', { fg = p.magenta })
-hi('@number', { fg = p.magenta })
-hi('@float', { fg = p.magenta })
+hi('@constant.builtin', { fg = t.magenta })
+hi('@character.special', { fg = t.magenta })
+hi('@string.escape', { fg = t.magenta })
+hi('@boolean', { fg = t.magenta })
+hi('@number', { fg = t.magenta })
+hi('@float', { fg = t.magenta })
 
 -- white - saying
-hi('@string', { fg = p.white })
-hi('@character', { fg = p.white })
+hi('@string', { fg = t.white })
+hi('@character', { fg = t.white })
 
 -- black - commenting
-hi('@comment', { fg = p.black, italic = true })
-hi('@comment.documentation', { fg = p.black, bold = true, italic = true })
-hi('@spell', { fg = p.black, italic = true })
+hi('@comment', { fg = t.black, italic = italic_switch })
+hi(
+	'@comment.documentation',
+	{ fg = t.black, bold = bold_switch, italic = italic_switch }
+)
+hi('@spell', { fg = t.black, italic = italic_switch })
 
--- ==========================================
--- PHASE E: LEGACY SYNTAX FALLBACKS
--- ==========================================
-hi('Comment', { fg = p.black, italic = true })
-hi('String', { fg = p.white })
-hi('Number', { fg = p.magenta })
-hi('Boolean', { fg = p.magenta })
-hi('Constant', { fg = p.magenta })
-hi('Identifier', { fg = p.cyan })
-hi('Function', { fg = p.green })
-hi('Statement', { fg = p.blue })
-hi('Conditional', { fg = p.yellow })
-hi('Repeat', { fg = p.yellow })
-hi('Operator', { fg = p.green })
-hi('Keyword', { fg = p.blue })
-hi('Exception', { fg = p.yellow })
-hi('PreProc', { fg = p.red })
-hi('Type', { fg = p.blue })
-hi('Special', { fg = p.magenta })
-hi('Delimiter', { fg = p.blue })
-hi('Error', { fg = p.red, bold = true })
-hi('Todo', { fg = p.cyan, bold = true })
+-- legacy syntax fallbacks
+hi('Comment', { fg = t.black, italic = italic_switch })
+hi('String', { fg = t.white })
+hi('Number', { fg = t.magenta })
+hi('Boolean', { fg = t.magenta })
+hi('Constant', { fg = t.magenta })
+hi('Identifier', { fg = t.cyan })
+hi('Function', { fg = t.green })
+hi('Statement', { fg = t.blue })
+hi('Conditional', { fg = t.yellow })
+hi('Repeat', { fg = t.yellow })
+hi('Operator', { fg = t.green })
+hi('Keyword', { fg = t.blue })
+hi('Exception', { fg = t.yellow })
+hi('PreProc', { fg = t.red })
+hi('Type', { fg = t.blue })
+hi('Special', { fg = t.magenta })
+hi('Delimiter', { fg = t.blue })
+hi('Error', { fg = t.red, bold = bold_switch })
+hi('Todo', { fg = t.cyan, bold = bold_switch })
 
--- ==========================================
--- PHASE F: PLUGINS
--- ==========================================
+-- plugins
+-- mini.diff
+hi('MiniDiffSignAdd', { fg = t.green, bg = t.ground, bold = bold_switch })
+hi('MiniDiffSignChange', { fg = t.yellow, bg = t.ground, bold = bold_switch })
+hi('MiniDiffSignDelete', { fg = t.red, bg = t.ground, bold = bold_switch })
 
--- Mini Diff
-hi('MiniDiffSignAdd', { fg = p.green, bg = p.ground, bold = true })
-hi('MiniDiffSignChange', { fg = p.yellow, bg = p.ground, bold = true })
-hi('MiniDiffSignDelete', { fg = p.red, bg = p.ground, bold = true })
+-- oil
+hi('OilNormal', { fg = t.black, bg = t.ground })
+hi('OilBorder', { fg = t.blue })
+hi('OilTitle', { fg = t.blue, bg = t.ground, bold = bold_switch })
 
--- Oil File Explorer
-hi('OilNormal', { fg = p.black, bg = p.ground })
-hi('OilBorder', { fg = p.blue })
-hi('OilTitle', { fg = p.blue, bg = p.ground, bold = true })
-
--- Mini Statusline
+-- mini.statusline
 hi(
 	'MiniStatuslineModeNormal',
-	{ fg = p.ground, bg = p.black, bold = true, italic = true }
+	{ fg = t.ground, bg = t.black, bold = bold_switch }
 )
 hi(
 	'MiniStatuslineModeInsert',
-	{ fg = p.ground, bg = p.white, bold = true, italic = true }
+	{ fg = t.ground, bg = t.white, bold = bold_switch }
 )
 hi(
 	'MiniStatuslineModeVisual',
-	{ fg = p.ground, bg = p.cyan, bold = true, italic = true }
+	{ fg = t.ground, bg = t.cyan, bold = bold_switch }
 )
 hi(
 	'MiniStatuslineModeCommand',
-	{ fg = p.ground, bg = p.green, bold = true, italic = true }
+	{ fg = t.ground, bg = t.green, bold = bold_switch }
 )
 hi(
 	'MiniStatuslineModeReplace',
-	{ fg = p.ground, bg = p.magenta, bold = true, italic = true }
+	{ fg = t.ground, bg = t.magenta, bold = bold_switch }
 )
 hi(
 	'MiniStatuslineModeOther',
-	{ fg = p.ground, bg = p.black, bold = true, italic = true }
+	{ fg = t.ground, bg = t.black, bold = bold_switch }
 )
-hi('MiniStatuslineDevinfo', { fg = p.black, bg = p.ground })
-hi('MiniStatuslineFilename', { fg = p.black, bg = p.ground })
+hi('MiniStatuslineDevinfo', { fg = t.black, bg = t.ground })
+hi('MiniStatuslineFilename', { fg = t.black, bg = t.ground })
 
--- Blink CMP
-hi('BlinkCmpMenu', { fg = p.black, bg = p.ground })
-hi('BlinkCmpMenuBorder', { fg = p.blue, bg = p.ground })
+-- blink
+hi('BlinkCmpMenu', { fg = t.black, bg = t.ground })
+hi('BlinkCmpMenuBorder', { fg = t.blue, bg = t.ground })
+hi('BlinkCmpMenuSelection', {
+	bg = 'NONE',
+	bold = bold_switch,
+	underdotted = udotted_switch,
+	sp = t.cyan,
+})
+hi('BlinkCmpLabel', { fg = t.black })
+hi('BlinkCmpLabelMatch', { fg = t.magenta, bold = bold_switch })
+hi('BlinkCmpKind', { fg = t.black })
+hi('BlinkCmpDocBorder', { fg = t.blue, bg = t.ground })
+hi('BlinkCmpSignatureHelpBorder', { fg = t.blue, bg = t.ground })
+
+-- mason
+hi('MasonNormal', { fg = t.black, bg = t.ground })
+hi('MasonHeader', { fg = t.blue, bold = bold_switch })
+hi('MasonHeaderSecondary', { fg = t.blue, bold = bold_switch })
+hi('MasonHeading', { fg = t.blue, bold = bold_switch })
+hi('MasonHighlight', { fg = t.cyan })
+hi('MasonHighlightBlock', { fg = t.ground, bg = t.cyan })
 hi(
-	'BlinkCmpMenuSelection',
-	{ bg = 'NONE', bold = true, underdotted = true, sp = p.cyan }
+	'MasonHighlightBlockBold',
+	{ fg = t.ground, bg = t.cyan, bold = bold_switch }
 )
-hi('BlinkCmpLabel', { fg = p.black })
-hi('BlinkCmpLabelMatch', { fg = p.magenta, bold = true })
-hi('BlinkCmpKind', { fg = p.black })
-hi('BlinkCmpDocBorder', { fg = p.blue, bg = p.ground })
-hi('BlinkCmpSignatureHelpBorder', { fg = p.blue, bg = p.ground })
-
--- ==========================================
--- Mason.nvim
--- ==========================================
-hi('MasonNormal', { fg = p.black, bg = p.ground })
-hi('MasonHeader', { fg = p.blue, bold = true })
-hi('MasonHeaderSecondary', { fg = p.blue, bold = true })
-hi('MasonHeading', { fg = p.blue, bold = true })
-hi('MasonHighlight', { fg = p.cyan })
-hi('MasonHighlightBlock', { fg = p.ground, bg = p.cyan })
-hi('MasonHighlightBlockBold', { fg = p.ground, bg = p.cyan, bold = true })
-hi('MasonHighlightSecondary', { fg = p.yellow })
-hi('MasonHighlightBlockSecondary', { fg = p.ground, bg = p.yellow })
+hi('MasonHighlightSecondary', { fg = t.yellow })
+hi('MasonHighlightBlockSecondary', { fg = t.ground, bg = t.yellow })
 hi(
 	'MasonHighlightBlockBoldSecondary',
-	{ fg = p.ground, bg = p.yellow, bold = true }
+	{ fg = t.ground, bg = t.yellow, bold = bold_switch }
 )
-hi('MasonLink', { fg = p.cyan })
-hi('MasonMuted', { fg = p.black, italic = true })
-hi('MasonMutedBlock', { fg = p.black, bg = p.ground })
-hi('MasonMutedBlockBold', { fg = p.black, bg = p.ground, bold = true })
-hi('MasonError', { fg = p.red, bold = true })
-hi('MasonWarning', { fg = p.yellow, bold = true })
+hi('MasonLink', { fg = t.cyan })
+hi('MasonMuted', { fg = t.black })
+hi('MasonMutedBlock', { fg = t.black, bg = t.ground })
+hi('MasonMutedBlockBold', { fg = t.black, bg = t.ground, bold = bold_switch })
+hi('MasonError', { fg = t.red, bold = bold_switch })
+hi('MasonWarning', { fg = t.yellow, bold = bold_switch })
